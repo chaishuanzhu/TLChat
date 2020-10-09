@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, TLExpressionChosenSectionType) {
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
 }
 
 - (void)viewWillLayoutSubviews
@@ -85,9 +85,9 @@ typedef NS_ENUM(NSInteger, TLExpressionChosenSectionType) {
     [self.requestQueue addRequestModel:self.bannerRequestModel];
     [self.requestQueue addRequestModel:self.recommentRequestModel];
     [self.requestQueue addRequestModel:[self listRequestModelWithPageIndex:1]];
-    [TLUIUtility showLoading:nil];
+    [TLToast showLoading:nil];
     [self.requestQueue runAllRequestsWithCompleteAction:^(NSArray *data, NSInteger successCount, NSInteger failureCount) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
     }];
 }
 
@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, TLExpressionChosenSectionType) {
             });
         }
         else {
-            [TLUIUtility showErrorHint:requestModel.data];
+            [TLToast showErrorToast:requestModel.data];
         }
         [self.tableView reloadData];
     }];

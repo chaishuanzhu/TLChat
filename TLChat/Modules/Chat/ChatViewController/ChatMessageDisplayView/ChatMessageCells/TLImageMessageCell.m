@@ -37,13 +37,12 @@
     TLMessageOwnerType lastOwnType = self.message ? self.message.ownerTyper : -1;
     [super setMessage:message];
     
-    if ([message imagePath]) {
+    if (message.ownerTyper == TLMessageOwnerTypeSelf) {
         NSString *imagePath = [NSFileManager pathUserChatImage:[message imagePath]];
-        [self.msgImageView setThumbnailPath:imagePath highDefinitionImageURL:[message imagePath]];
+        [self.msgImageView setThumbnailPath:imagePath highDefinitionImageURL:[message imageURL]];
     }
     else {
-        [self.msgImageView setThumbnailPath:nil highDefinitionImageURL:[message imagePath]];
-        [self.msgImageView tt_setImageWithURL:[NSURL URLWithString:[message imageURL]]];
+        [self.msgImageView setThumbnailPath:nil highDefinitionImageURL:[message imageURL]];
     }
 
     if (lastOwnType != message.ownerTyper) {

@@ -41,6 +41,8 @@
 
 + (TLFriendHelper *)sharedFriendHelper;
 
+- (void)reloadData;
+
 - (TLUser *)getFriendInfoByUserID:(NSString *)userID;
 
 - (TLGroup *)getGroupInfoByGroupID:(NSString *)groupID;

@@ -52,6 +52,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [[TLFriendHelper sharedFriendHelper] reloadData];
     
     // 开始监听通讯录数据
     [self p_startMonitorContactsData];

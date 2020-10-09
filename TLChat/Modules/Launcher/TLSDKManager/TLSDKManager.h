@@ -17,6 +17,8 @@
  */
 - (void)launchInWindow:(UIWindow *)window;
 
+- (void)releaseSDK;
+
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 

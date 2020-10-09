@@ -48,10 +48,10 @@ typedef NS_ENUM(NSInteger, TLExpressionSearchVCSectionType) {
 #pragma mark - # Request
 - (void)requsetSearchExpressionGroupWithKeyword:(NSString *)keyword
 {
-    [TLUIUtility showLoading:nil];
+    [TLToast showLoading:nil];
     @weakify(self);
     [TLExpressionGroupModel requestExpressionSearchByKeyword:keyword success:^(NSArray *data) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         if (data.count > 0) {
             [self p_reloadViewWithData:data];
         }
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, TLExpressionSearchVCSectionType) {
             [self.tableView showEmptyViewWithTitle:@"未搜索到相关表情包"];
         }
     } failure:^(NSString *error) {
-        [TLUIUtility showErrorHint:error];
+        [TLToast showErrorToast:error];
         [self p_reloadViewWithData:nil];
         [self.tableView showErrorViewWithTitle:error retryAction:^(id userData) {
             @strongify(self);

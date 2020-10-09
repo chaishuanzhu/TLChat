@@ -1,6 +1,6 @@
 {
   "name": "TLKit",
-  "version": "1.0",
+  "version": "2.0",
   "platforms": {
     "ios": "8.0"
   },
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "https://github.com/tbl00c/TLKit.git",
-    "tag": "1.0"
+    "tag": "2.0"
   },
   "public_header_files": "TLKit/Classes/TLKit.h",
   "source_files": "TLKit/Classes/TLKit.h",
@@ -26,26 +26,84 @@
       "source_files": "TLKit/Classes/TLShortcut/*.{h,m}"
     },
     {
-      "name": "TLFunctional",
-      "public_header_files": "TLKit/Classes/TLFunctional/TLFunctional.h",
-      "source_files": "TLKit/Classes/TLFunctional/TLFunctional.h",
+      "name": "TLComponents",
+      "public_header_files": "TLKit/Classes/TLComponents/TLComponents.h",
+      "source_files": "TLKit/Classes/TLComponents/TLComponents.h",
       "subspecs": [
         {
           "name": "TLActionSheet",
-          "source_files": "TLKit/Classes/TLFunctional/TLActionSheet/*.{h,m}"
+          "source_files": "TLKit/Classes/TLComponents/TLActionSheet/*.{h,m}"
         },
         {
           "name": "TLAlertView",
-          "source_files": "TLKit/Classes/TLFunctional/TLAlertView/*.{h,m}"
+          "source_files": "TLKit/Classes/TLComponents/TLAlertView/*.{h,m}"
         },
         {
-          "name": "TLUIUtility",
-          "source_files": "TLKit/Classes/TLFunctional/TLUIUtility/*.{h,m}",
+          "name": "TLToast",
+          "source_files": "TLKit/Classes/TLComponents/TLToast/*.{h,m}",
           "dependencies": {
             "SVProgressHUD": [
               "~> 2.2.5"
             ]
           }
+        },
+        {
+          "name": "TLTheme",
+          "source_files": "TLKit/Classes/TLComponents/TLTheme/*.{h,m}"
+        },
+        {
+          "name": "TLColor",
+          "source_files": "TLKit/Classes/TLComponents/TLColor/*.{h,m}",
+          "dependencies": {
+            "TLKit/TLCategories/UIKit/UIColor": [
+
+            ],
+            "TLKit/TLShortcut": [
+
+            ],
+            "TLKit/TLComponents/TLTheme": [
+
+            ]
+          },
+          "resources": "TLKit/Classes/TLComponents/TLColor/TLColorTable.txt"
+        },
+        {
+          "name": "TLPictureCarouselView",
+          "source_files": "TLKit/Classes/TLComponents/TLPictureCarouselView/*.{h,m}",
+          "dependencies": {
+            "TLKit/TLCategories/UIKit/UIScrollView": [
+
+            ]
+          }
+        },
+        {
+          "name": "TLLocalPushManager",
+          "source_files": "TLKit/Classes/TLComponents/TLLocalPushManager/*.{h,m}"
+        },
+        {
+          "name": "TLStatusBarAlert",
+          "source_files": "TLKit/Classes/TLComponents/TLStatusBarAlert/**/*.{h,m}"
+        },
+        {
+          "name": "GKCover",
+          "source_files": "TLKit/Classes/TLComponents/GKCover/**/*.{h,m}"
+        },
+        {
+          "name": "RSA",
+          "source_files": "TLKit/Classes/TLComponents/RSA/*.{h,m}"
+        },
+        {
+          "name": "TLAlertnateIconManager",
+          "source_files": "TLKit/Classes/TLComponents/TLAlertnateIconManager/*.{h,m}"
+        },
+        {
+          "name": "TLAppUtility",
+          "source_files": "TLKit/Classes/TLComponents/TLAppUtility/*.{h,m}"
+        },
+        {
+          "name": "TLAlwaysActivity",
+          "source_files": "TLKit/Classes/TLComponents/TLAlwaysActivity/*.{h,m}",
+          "resources": "TLKit/Classes/TLComponents/TLAlwaysActivity/*.m4a"
         }
       ]
     },

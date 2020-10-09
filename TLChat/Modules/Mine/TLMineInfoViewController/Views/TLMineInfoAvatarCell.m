@@ -38,7 +38,11 @@
 
 - (void)setItem:(TLSettingItem *)item
 {
+    if (self.item) {
+        [self removeAllObserver];
+    }
     [super setItem:item];
+    [self addAllObserver];
     [self.titleLabel setText:item.title];
     if (item.rightImagePath) {
         [self.avatarImageView setImage: [UIImage imageNamed:item.rightImagePath]];
@@ -49,6 +53,25 @@
     else {
         [self.avatarImageView setImage:nil];
     }
+}
+
+- (void)addAllObserver {
+    [self.item addObserver:self forKeyPath:@"rightImageURL" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeAllObserver {
+    [self.item removeObserver:self forKeyPath:@"rightImageURL"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    TLSettingItem *item = (TLSettingItem *)object;
+    if ([keyPath isEqualToString:@"rightImageURL"]) {
+        [self.avatarImageView tt_setImageWithURL:TLURL(item.rightImageURL) placeholderImage:[UIImage imageNamed:DEFAULT_AVATAR_PATH]];
+    }
+}
+
+- (void)dealloc {
+    [self removeAllObserver];
 }
 
 #pragma mark - # Private Methods

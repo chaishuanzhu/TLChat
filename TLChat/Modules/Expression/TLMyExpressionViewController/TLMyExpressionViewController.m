@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, TLMyExpressionVCSectionType) {
         [self reloadView];
     }
     else {
-        [TLUIUtility showErrorHint:@"表情包删除失败"];
+        [TLToast showErrorToast:@"表情包删除失败"];
     }
 }
 

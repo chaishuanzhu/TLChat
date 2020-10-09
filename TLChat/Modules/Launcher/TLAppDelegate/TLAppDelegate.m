@@ -30,4 +30,9 @@
 
 - (void)urgentMethod{}
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+
+    [[TLSDKManager sharedInstance] releaseSDK];
+}
+
 @end

@@ -16,6 +16,8 @@
 
 - (void)playAudioAtPath:(NSString *)path complete:(void (^)(BOOL finished))complete;
 
+- (void)playAudioAtURL:(NSString *)url complete:(void (^)(BOOL finished))complete;
+
 - (void)stopPlayingAudio;
 
 @end

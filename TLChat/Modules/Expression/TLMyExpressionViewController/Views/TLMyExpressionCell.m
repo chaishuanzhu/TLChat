@@ -7,7 +7,6 @@
 //
 
 #import "TLMyExpressionCell.h"
-#import "UIImage+Color.h"
 
 @interface TLMyExpressionCell()
 

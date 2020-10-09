@@ -13,7 +13,7 @@
 #import "TLChatViewController.h"
 #import "TLLaunchManager.h"
 #import "TLUserHelper.h"
-#import "MWPhotoBrowser.h"
+//#import "MWPhotoBrowser.h"
 
 #import "TLUserDetailBaseInfoCell.h"
 #import "TLUserDetailPhoneKVCell.h"
@@ -108,11 +108,11 @@ typedef NS_ENUM(NSInteger, TLUserDetailVCSectionType) {
     self.addCell([TLUserDetailBaseInfoCell class]).toSection(TLUserDetailVCSectionTypeBaseInfo).withDataModel(userModel).eventAction(^ id(NSInteger eventType, id data) {
         @strongify(self);
         TLUser *userModel = data;
-        NSURL *url = TLURL(userModel.avatarURL);
-        MWPhoto *photo = [MWPhoto photoWithURL:url];
-        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:@[photo]];
-        UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
-        [self presentViewController:broserNavC animated:NO completion:nil];
+//        NSURL *url = TLURL(userModel.avatarURL);
+//        MWPhoto *photo = [MWPhoto photoWithURL:url];
+//        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:@[photo]];
+//        UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
+//        [self presentViewController:broserNavC animated:NO completion:nil];
         return nil;
     });
     
@@ -172,7 +172,7 @@ typedef NS_ENUM(NSInteger, TLUserDetailVCSectionType) {
     // 语音聊天
     if (![userModel.userID isEqualToString:[TLUserHelper sharedHelper].userID]) {
         self.addCell([TLUserDetailViewChatButtonCell class]).toSection(TLUserDetailVCSectionTypeFunction).withDataModel(LOCSTR(@"视频聊天")).eventAction(^ id(NSInteger eventType, id data) {
-            [TLUIUtility showInfoHint:@"暂未实现"];
+            [TLToast showWarningToast:@"暂未实现"];
             return nil;
         });
     }

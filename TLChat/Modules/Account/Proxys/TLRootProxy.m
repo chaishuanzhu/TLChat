@@ -9,9 +9,11 @@
 #import "TLRootProxy.h"
 #import "TLMacros.h"
 #import "TLNetworking.h"
+#import "TLUserHelper.h"
+#import "TLMessageManager.h"
 
-#define     URL_LOGIN           @"account/login/"
-#define     URL_REGISTER        @"account/register/"
+#define     URL_LOGIN           @"user/login/"
+#define     URL_REGISTER        @"user/register/"
 
 @implementation TLRootProxy
 
@@ -32,20 +34,23 @@
                          failure:(TLBlockRequestFailureWithErrorMessage)failure
 {
     NSString *url = [HOST_URL stringByAppendingString:URL_LOGIN];
-    NSDictionary *params = @{@"phoneNumber" : phoneNumber,
+    NSDictionary *params = @{@"phone" : phoneNumber,
                              @"password" : password};
     [TLNetworking postUrl:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *json = [responseObject mj_JSONObject];
-        NSInteger status = [json[@"status"] integerValue];
-        if (status == 1) {
-            NSDictionary *data = json[@"content"];
-            NSString *token = data[@"token"];
+        BOOL isok = [json[@"isok"] boolValue];
+        if (isok) {
+            NSDictionary *data = json[@"data"];
+            NSString *token = data[@"password"];
+            TLUser *user = [TLUser mj_objectWithKeyValues:data];
+            [[TLUserHelper sharedHelper]setUser:user];
+            [[TLMessageManager sharedInstance]loginWithID:[TLUserHelper sharedHelper].userID andToken:@"123456"];
             if (success) {
                 success(token);
             }
         }
         else {
-            NSString *errorMsg = json[@"content"];
+            NSString *errorMsg = json[@"message"];
             if (failure) {
                 failure(errorMsg);
             }
@@ -63,20 +68,23 @@
                             failure:(TLBlockRequestFailureWithErrorMessage)failure
 {
     NSString *url = [HOST_URL stringByAppendingString:URL_REGISTER];
-    NSDictionary *params = @{@"phoneNumber" : phoneNumber,
+    NSDictionary *params = @{@"phone" : phoneNumber,
                              @"password" : password};
     [TLNetworking postUrl:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSDictionary *json = [responseObject mj_JSONObject];
-        NSInteger status = [json[@"status"] integerValue];
-        if (status == 1) {
-            NSDictionary *data = json[@"content"];
+        BOOL isOK = [json[@"isok"] boolValue];
+        if (isOK) {
+            NSDictionary *data = json[@"data"];
             NSString *token = data[@"token"];
+            TLUser *user = [TLUser mj_objectWithKeyValues:data];
+            [[TLUserHelper sharedHelper]setUser:user];
+            [[TLMessageManager sharedInstance]loginWithID:[TLUserHelper sharedHelper].userID andToken:@"123456"];
             if (success) {
                 success(token);
             }
         }
         else {
-            NSString *errorMsg = json[@"content"];
+            NSString *errorMsg = json[@"message"];
             if (failure) {
                 failure(errorMsg);
             }

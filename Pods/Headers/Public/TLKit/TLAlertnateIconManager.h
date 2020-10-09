@@ -1,0 +1,1 @@
+../../../TLKit/TLKit/Classes/TLComponents/TLAlertnateIconManager/TLAlertnateIconManager.h

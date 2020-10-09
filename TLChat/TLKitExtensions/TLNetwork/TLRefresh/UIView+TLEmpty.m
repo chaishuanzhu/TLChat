@@ -7,7 +7,6 @@
 //
 
 #import "UIView+TLEmpty.h"
-#import "UIView+Extensions.h"
 
 @implementation UIView (TLEmpty)
 

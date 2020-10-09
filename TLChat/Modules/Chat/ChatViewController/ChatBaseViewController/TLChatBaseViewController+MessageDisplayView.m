@@ -111,11 +111,18 @@
         if ([(TLVoiceMessage *)message msgStatus] == TLVoiceMessageStatusNormal) {
             // 播放语音消息
             [(TLVoiceMessage *)message setMsgStatus:TLVoiceMessageStatusPlaying];
-            
-            [[TLAudioPlayer sharedAudioPlayer] playAudioAtPath:[(TLVoiceMessage *)message path] complete:^(BOOL finished) {
-                [(TLVoiceMessage *)message setMsgStatus:TLVoiceMessageStatusNormal];
-                [self.messageDisplayView updateMessage:message];
-            }];
+
+            if (message.ownerTyper == TLMessageOwnerTypeSelf) {
+                [[TLAudioPlayer sharedAudioPlayer] playAudioAtPath:[(TLVoiceMessage *)message path] complete:^(BOOL finished) {
+                    [(TLVoiceMessage *)message setMsgStatus:TLVoiceMessageStatusNormal];
+                    [self.messageDisplayView updateMessage:message];
+                }];
+            } else {
+                [[TLAudioPlayer sharedAudioPlayer] playAudioAtURL:[(TLVoiceMessage *)message url] complete:^(BOOL finished) {
+                    [(TLVoiceMessage *)message setMsgStatus:TLVoiceMessageStatusNormal];
+                    [self.messageDisplayView updateMessage:message];
+                }];
+            }
         }
         else {
             // 停止播放语音消息

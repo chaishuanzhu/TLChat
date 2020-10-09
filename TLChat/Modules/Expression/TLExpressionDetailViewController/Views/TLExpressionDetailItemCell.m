@@ -8,7 +8,6 @@
 
 #import "TLExpressionDetailItemCell.h"
 #import <SDWebImage/UIImage+GIF.h>
-#import "UIImage+Color.h"
 
 @interface TLExpressionDetailItemCell ()
 

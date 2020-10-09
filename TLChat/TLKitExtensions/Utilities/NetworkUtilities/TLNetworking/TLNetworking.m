@@ -18,9 +18,31 @@
 {
     [AFJSONResponseSerializer serializer].acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     return [manager POST:urlString parameters:parameters progress:nil success:success failure:failure];
+}
+
++ (NSURLSessionDataTask *)getUrl:(NSString *)urlString
+                      parameters:(id)parameters
+                         success:(void (^)(NSURLSessionDataTask *, id))success
+                         failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+    [AFJSONResponseSerializer serializer].acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    return [manager GET:urlString parameters:parameters progress:nil success:success failure:failure];
+}
+
++ (NSURLSessionDataTask *)putUrl:(NSString *)urlString
+                      parameters:(id)parameters
+                         success:(void (^)(NSURLSessionDataTask *, id))success
+                         failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+    [AFJSONResponseSerializer serializer].acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    return [manager PUT:urlString parameters:parameters success:success failure:failure];
 }
 
 @end

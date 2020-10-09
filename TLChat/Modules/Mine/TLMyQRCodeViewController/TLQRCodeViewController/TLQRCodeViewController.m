@@ -90,7 +90,7 @@
         [TLAlertView showWithTitle:@"错误" message:[NSString stringWithFormat:@"保存图片到系统相册失败\n%@", [error description]]];
     }
     else {
-        [TLUIUtility showSuccessHint:@"已保存到系统相册"];
+        [TLToast showSuccessToast:@"已保存到系统相册"];
     }
 }
 

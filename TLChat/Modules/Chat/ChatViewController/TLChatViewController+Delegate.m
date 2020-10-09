@@ -10,7 +10,7 @@
 #import "TLExpressionViewController.h"
 #import "TLMyExpressionViewController.h"
 #import "TLUserDetailViewController.h"
-#import <MWPhotoBrowser/MWPhotoBrowser.h>
+//#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "NSFileManager+TLChat.h"
 
 @interface TLChatViewController ()
@@ -70,25 +70,25 @@
 
 - (void)didClickedImageMessages:(NSArray *)imageMessages atIndex:(NSInteger)index
 {
-    NSMutableArray *data = [[NSMutableArray alloc] init];
-    for (TLMessage *message in imageMessages) {
-        NSURL *url;
-        if ([(TLImageMessage *)message imagePath]) {
-            NSString *imagePath = [NSFileManager pathUserChatImage:[(TLImageMessage *)message imagePath]];
-            url = [NSURL fileURLWithPath:imagePath];
-        }
-        else {
-            url = TLURL([(TLImageMessage *)message imageURL]);
-        }
-  
-        MWPhoto *photo = [MWPhoto photoWithURL:url];
-        [data addObject:photo];
-    }
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:data];
-    [browser setDisplayNavArrows:YES];
-    [browser setCurrentPhotoIndex:index];
-    UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
-    [self presentViewController:broserNavC animated:NO completion:nil];
+//    NSMutableArray *data = [[NSMutableArray alloc] init];
+//    for (TLMessage *message in imageMessages) {
+//        NSURL *url;
+//        if ([(TLImageMessage *)message imagePath]) {
+//            NSString *imagePath = [NSFileManager pathUserChatImage:[(TLImageMessage *)message imagePath]];
+//            url = [NSURL fileURLWithPath:imagePath];
+//        }
+//        else {
+//            url = TLURL([(TLImageMessage *)message imageURL]);
+//        }
+//  
+//        MWPhoto *photo = [MWPhoto photoWithURL:url];
+//        [data addObject:photo];
+//    }
+//    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:data];
+//    [browser setDisplayNavArrows:YES];
+//    [browser setCurrentPhotoIndex:index];
+//    UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
+//    [self presentViewController:broserNavC animated:NO completion:nil];
 }
 
 //MARK: UIImagePickerDelegate

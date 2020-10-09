@@ -10,7 +10,6 @@
 #import "TLChatBaseViewController+Proxy.h"
 #import "TLChatBaseViewController+ChatBar.h"
 #import "TLChatBaseViewController+MessageDisplayView.h"
-#import "UIImage+Size.h"
 #import "NSFileManager+TLChat.h"
 
 @implementation TLChatBaseViewController
@@ -123,7 +122,7 @@
  */
 - (void)sendImageMessage:(UIImage *)image
 {
-    NSData *imageData = (UIImagePNGRepresentation(image) ? UIImagePNGRepresentation(image) :UIImageJPEGRepresentation(image, 0.5));
+    NSData *imageData = [image compress];
     NSString *imageName = [NSString stringWithFormat:@"%lf.jpg", [NSDate date].timeIntervalSince1970];
     NSString *imagePath = [NSFileManager pathUserChatImage:imageName];
     [[NSFileManager defaultManager] createFileAtPath:imagePath contents:imageData attributes:nil];

@@ -55,6 +55,15 @@ typedef NS_ENUM(NSInteger, TLImageDownloadState) {
 
 @implementation TLImageDownloader
 
++ (instancetype)sharedDownloader {
+    static TLImageDownloader *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return  instance;
+}
+
 - (void)addDownloadTaskWithUrl:(NSString *)urlString completeAction:(void (^)(BOOL, UIImage *))completeAction
 {
     NSURL *url = TLURL(urlString);
@@ -143,7 +152,7 @@ typedef NS_ENUM(NSInteger, TLImageDownloadState) {
             task.completeAction(task.success, task.image);
             if (task.success) {
                 [self.historyRecord addObject:task];
-                [[SDImageCache sharedImageCache] storeImage:task.image forKey:task.url.absoluteString toDisk:YES];
+                [[SDImageCache sharedImageCache] storeImage:task.image forKey:task.url.absoluteString toDisk:YES completion:^{}];
             }
         }
         if (self.downloadTasks.count > 0 && self.downloadTasks.firstObject.downloadState == TLImageDownloadStateComplete) {

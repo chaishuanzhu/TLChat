@@ -28,7 +28,7 @@
     [self setTitle:LOCSTR(@"公众号")];
 
     [self addRightBarButtonWithImage:TLImage(@"nav_add") actionBlick:^{
-        [TLUIUtility showInfoHint:@"暂未实现"];
+        [TLToast showWarningToast:@"暂未实现"];
     }];
     
     self.tableView = self.view.addTableView(1)

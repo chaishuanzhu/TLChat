@@ -57,7 +57,7 @@
 - (void)setData:(NSArray *)data
 {
     _data = data;
-    [self.picCarouselView setData:data];
+    [self.picCarouselView setImageData:data];
 }
 
 #pragma mark - # Private Methods

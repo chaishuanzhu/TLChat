@@ -77,9 +77,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [TLUIUtility showLoading:@"扫描中，请稍候"];
+    [TLToast showLoading:@"扫描中，请稍候"];
     [TLScannerViewController scannerQRCodeFromImage:image ans:^(NSString *ansStr) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         if (ansStr == nil) {
             [TLAlertView showWithTitle:@"扫描失败" message:@"请换张图片，或换个设备重试~" cancelButtonTitle:@"确定" otherButtonTitles:nil actionHandler:^(NSInteger buttonIndex) {
                 [self.scanVC startCodeReading];

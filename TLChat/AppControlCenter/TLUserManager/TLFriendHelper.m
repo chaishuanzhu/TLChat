@@ -13,6 +13,7 @@
 #import "TLUserHelper.h"
 #import "TLMessageManager+MessageRecord.h"
 #import "TLChatNotificationKey.h"
+#import "TLNetworking.h"
 
 static TLFriendHelper *friendHelper = nil;
 
@@ -85,6 +86,10 @@ static TLFriendHelper *friendHelper = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_CHAT_VIEW_RESET object:nil];
     }
     return ok;
+}
+
+- (void)reloadData {
+    [self p_initTestData];
 }
 
 #pragma mark - Private Methods -
@@ -186,36 +191,58 @@ static TLFriendHelper *friendHelper = nil;
 - (void)p_initTestData
 {
     // 好友数据
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"FriendList" ofType:@"json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:path];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    NSArray *arr = [TLUser mj_objectArrayWithKeyValuesArray:jsonArray];
-    [self.friendsData removeAllObjects];
-    [self.friendsData addObjectsFromArray:arr];
-    // 更新好友数据到数据库
-    BOOL ok = [self.friendStore updateFriendsData:self.friendsData forUid:[TLUserHelper sharedHelper].userID];
-    if (!ok) {
-        DDLogError(@"保存好友数据到数据库失败!");
-    }
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [self p_resetFriendData];
-    });
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"FriendList" ofType:@"json"];
+//    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+//    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+//    NSArray *arr = [TLUser mj_objectArrayWithKeyValuesArray:jsonArray];
+//    [self.friendsData removeAllObjects];
+//    [self.friendsData addObjectsFromArray:arr];
+
+    NSString *url = [HOST_URL stringByAppendingFormat:@"contact/%@",[TLUserHelper sharedHelper].userID];
+
+    @weakify(self)
+    [TLNetworking getUrl:url parameters:@{} success:^(NSURLSessionDataTask *task, id responseObject) {
+        @strongify(self)
+        NSDictionary *json = [responseObject mj_JSONObject];
+        BOOL isOK = [json[@"isok"] boolValue];
+        if (isOK) {
+            NSArray *jsonArray = json[@"data"];
+            NSArray *arr = [TLUser mj_objectArrayWithKeyValuesArray:jsonArray];
+            [self.friendsData removeAllObjects];
+            [self.friendsData addObjectsFromArray:arr];
+            // 更新好友数据到数据库
+            BOOL ok = [self.friendStore updateFriendsData:self.friendsData forUid:[TLUserHelper sharedHelper].userID];
+            if (!ok) {
+                DDLogError(@"保存好友数据到数据库失败!");
+            }
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [self p_resetFriendData];
+            });
+        }
+        else {
+            NSString *errorMsg = json[@"message"];
+            [TLToast showErrorToast:errorMsg];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [TLToast showErrorToast:@"网络请求失败"];
+    }];
+
     
-    // 群数据
-    path = [[NSBundle mainBundle] pathForResource:@"FriendGroupList" ofType:@"json"];
-    jsonData = [NSData dataWithContentsOfFile:path];
-    jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    arr = [TLGroup mj_objectArrayWithKeyValuesArray:jsonArray];
-    [self.groupsData removeAllObjects];
-    [self.groupsData addObjectsFromArray:arr];
-    ok = [self.groupStore updateGroupsData:self.groupsData forUid:[TLUserHelper sharedHelper].userID];
-    if (!ok) {
-        DDLogError(@"保存群数据到数据库失败!");
-    }
-    // 生成Group Icon
-    for (TLGroup *group in self.groupsData) {
-        [group createGroupAvatarWithCompleteAction:nil];
-    }
+//    // 群数据
+//    path = [[NSBundle mainBundle] pathForResource:@"FriendGroupList" ofType:@"json"];
+//    jsonData = [NSData dataWithContentsOfFile:path];
+//    jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+//    arr = [TLGroup mj_objectArrayWithKeyValuesArray:jsonArray];
+//    [self.groupsData removeAllObjects];
+//    [self.groupsData addObjectsFromArray:arr];
+//    ok = [self.groupStore updateGroupsData:self.groupsData forUid:[TLUserHelper sharedHelper].userID];
+//    if (!ok) {
+//        DDLogError(@"保存群数据到数据库失败!");
+//    }
+//    // 生成Group Icon
+//    for (TLGroup *group in self.groupsData) {
+//        [group createGroupAvatarWithCompleteAction:nil];
+//    }
 }
 
 #pragma mark - Getter

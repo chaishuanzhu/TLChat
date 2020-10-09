@@ -69,7 +69,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
     [self.phoneNumberTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.repeatPasswordTextField resignFirstResponder];
@@ -83,7 +83,7 @@
 
 - (void)didTapView
 {
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
     [self.phoneNumberTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.repeatPasswordTextField resignFirstResponder];
@@ -94,16 +94,16 @@
     NSString *phoneNumber = self.phoneNumberTextField.text;
     NSString *password = self.passwordTextField.text;
 
-    [TLUIUtility showLoading:nil];
+    [TLToast showLoading:nil];
     TLRootProxy *proxy = [[TLRootProxy alloc] init];
     TLWeakSelf(self);
     [proxy userRegisterWithPhoneNumber:phoneNumber password:password success:^(id datas) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         if (weakself.registerSuccess) {
             weakself.registerSuccess();
         }
     } failure:^(NSString *errMsg) {
-        [TLUIUtility showErrorHint:errMsg];
+        [TLToast showWarningToast:errMsg];
     }];
 
 }
@@ -355,6 +355,7 @@
         [button setBackgroundColor:[UIColor colorGreenDefault]];
         [button setTitle:LOCSTR(@"注册") forState:UIControlStateNormal];
         [button addTarget:self action:@selector(registerButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        _registerButton = button;
     }
     return _registerButton;
 }

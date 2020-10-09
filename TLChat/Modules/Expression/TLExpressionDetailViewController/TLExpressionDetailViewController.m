@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
     [super viewDidLoad];
     
     if (self.groupModel.data.count == 0) {
-        [TLUIUtility showLoading:nil];
+        [TLToast showLoading:nil];
         [self requestExpressionGroupDetailDataWithPageIndex:1];
     }
     else {
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
 {
     [super viewWillDisappear:animated];
     
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
 }
 
 #pragma mark - # Requests
@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
         if (!self) {
             return;
         }
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         self.pageIndex = pageIndex;
         if (pageIndex == 1) {
             self.groupModel.data = [data mutableCopy];
@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
         }
         [self p_showExpressionItemsWithData:data];
     } failure:^(NSString *error) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
     }];
 }
 
@@ -125,7 +125,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
         if (cell.x <= point.x && cell.y <= point.y && cell.x + cell.width >= point.x && cell.y + cell.height >= point.y) {
             NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
             TLExpressionModel *emoji = [self.groupModel objectAtIndex:indexPath.row];
-            [TLUIUtility showLoading:@"正在将表情保存到系统相册"];
+            [TLToast showLoading:@"正在将表情保存到系统相册"];
             NSString *urlString = [TLExpressionModel expressionDownloadURLWithEid:emoji.eId];
             NSData *data = [NSData dataWithContentsOfURL:TLURL(urlString)];
             if (!data) {
@@ -146,7 +146,7 @@ typedef NS_ENUM(NSInteger, TLExpressionDetailVCSectionType) {
         [TLAlertView showWithTitle:@"错误" message:[NSString stringWithFormat:@"保存图片到系统相册失败\n%@", [error description]]];
     }
     else {
-        [TLUIUtility showSuccessHint:@"已保存到系统相册"];
+        [TLToast showSuccessToast:@"已保存到系统相册"];
     }
 }
 

@@ -78,7 +78,7 @@
     TLConversation *conversation = viewModel.dataModel;
     
     if (!conversation) {
-        [TLUIUtility showErrorHint:@"获取会话信息时出现异常"];
+        [TLToast showErrorToast:@"获取会话信息时出现异常"];
         return;
     }
     

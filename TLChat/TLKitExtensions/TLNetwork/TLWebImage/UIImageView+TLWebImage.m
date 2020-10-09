@@ -7,7 +7,8 @@
 //
 
 #import "UIImageView+TLWebImage.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <UIImageView+WebCache.h>
+#import <UIView+WebCache.h>
 
 @implementation UIImageView (TLWebImage)
 
@@ -28,7 +29,7 @@
 
 - (void)tt_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(TLWebImageDownloadCompleteBlock)completedBlock
 {
-     [self tt_setImageWithURL:url placeholderImage:placeholder options:nil completed:completedBlock];
+     [self tt_setImageWithURL:url placeholderImage:placeholder options:TLWebImageRetryFailed completed:completedBlock];
 }
 
 - (void)tt_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(TLWebImageOptions)options completed:(TLWebImageDownloadCompleteBlock)completedBlock
@@ -48,7 +49,7 @@
 
 - (void)tt_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(TLWebImageOptions)options progress:(TLWebImageDownloaderProgressBlock)progressBlock completed:(TLWebImageDownloadCompleteBlock)completedBlock
 {
-    [self sd_setImageWithURL:url placeholderImage:placeholder options:(SDWebImageOptions)options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    [self sd_setImageWithURL:url placeholderImage:placeholder options:(SDWebImageOptions)options context:nil progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         if (progressBlock) {
             progressBlock(receivedSize, expectedSize, nil);
         }

@@ -43,7 +43,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
 }
 
 #pragma mark - # Private Methods
@@ -70,17 +70,17 @@
 
 - (void)p_loadData
 {
-    [TLUIUtility showLoading:@"加载中"];
+    [TLToast showLoading:@"加载中"];
     @weakify(self);
     [TLMobileContactHelper tryToGetAllContactsSuccess:^(NSArray *data, NSArray *formatData, NSArray *headers) {
         @strongify(self);
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         self.searchResultVC.contactsData = data;
         [self.tableViewAngel resetListWithMobileContactsData:formatData sectionHeaders:headers];
         [self.tableView reloadData];
         [MobClick event:EVENT_GET_CONTACTS];
     } failed:^{
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         [TLAlertView showWithTitle:@"错误" message:@"未成功获取到通讯录信息"];
     }];
 }

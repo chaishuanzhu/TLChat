@@ -59,9 +59,10 @@
 - (void)upgradeToHTTPS
 {
     // 设定SDWebImageManager图片存储url key规则
-    [[SDWebImageManager sharedManager] setCacheKeyFilter:^(NSURL *url) {
+    SDWebImageCacheKeyFilter *filter = [SDWebImageCacheKeyFilter cacheKeyFilterWithBlock:^NSString * _Nullable(NSURL * _Nonnull url) {
         return [url.absoluteString httpsUrl];
     }];
+    [[SDWebImageManager sharedManager] setCacheKeyFilter:filter];
     
     _mainScheme = TLURLSchemeHTTPS;
     

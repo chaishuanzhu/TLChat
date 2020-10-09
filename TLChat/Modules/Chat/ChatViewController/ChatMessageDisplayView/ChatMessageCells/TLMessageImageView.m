@@ -7,6 +7,8 @@
 //
 
 #import "TLMessageImageView.h"
+#import "TLImageDownloader.h"
+#import <SDWebImage.h>
 
 @interface TLMessageImageView ()
 
@@ -49,7 +51,15 @@
 - (void)setThumbnailPath:(NSString *)imagePath highDefinitionImageURL:(NSString *)imageURL
 {
     if (imagePath == nil) {
-        [self.contentLayer setContents:nil];
+        UIImage *image = [UIImage imageWithColor:[UIColor grayColor]];
+        [self.contentLayer setContents:(id)(image.CGImage)];
+        @weakify(self)
+        TLImageDownloader *downloader = [TLImageDownloader sharedDownloader];
+        [downloader addDownloadTaskWithUrl:imageURL completeAction:^(BOOL success, UIImage *image) {
+            @strongify(self)
+            [self.contentLayer setContents:(id)(image.CGImage)];
+        }];
+        [downloader startDownload];
     }
     else {
         UIImage *image = [[UIImage imageNamed:imagePath] copy];

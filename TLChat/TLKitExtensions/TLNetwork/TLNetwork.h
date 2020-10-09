@@ -13,6 +13,7 @@
 
 #pragma mark - # 网络请求
 #import "TLBaseRequest.h"
+#import "TLUploadRequest.h"
 #import "TLResponse.h"
 
 #pragma mark - # 网络工具

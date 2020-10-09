@@ -7,7 +7,6 @@
 //
 
 #import "TLMobileContactModel.h"
-#import "NSString+PinYin.h"
 
 @implementation TLMobileContactModel
 

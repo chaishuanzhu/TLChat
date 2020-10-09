@@ -64,7 +64,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
     [self.phoneNumberTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
 }
@@ -77,7 +77,7 @@
 
 - (void)didTapView
 {
-    [TLUIUtility hiddenLoading];
+    [TLToast dismiss];
     [self.phoneNumberTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
 }
@@ -86,21 +86,21 @@
 {
     NSString *phoneNumber = self.phoneNumberTextField.text;
     if (phoneNumber.length != 11 && ![phoneNumber hasPrefix:@"1"]) {
-        [TLUIUtility showErrorHint:LOCSTR(@"请输入正确的手机号")];
+        [TLToast showErrorToast:LOCSTR(@"请输入正确的手机号")];
         return;
     }
     NSString *password = self.passwordTextField.text;
     
-    [TLUIUtility showLoading:nil];
+    [TLToast showLoading:nil];
     TLRootProxy *proxy = [[TLRootProxy alloc] init];
     TLWeakSelf(self);
     [proxy userLoginWithPhoneNumber:phoneNumber password:password success:^(id datas) {
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         if (weakself.loginSuccess) {
             weakself.loginSuccess();
         }
     } failure:^(NSString *errMsg) {
-        [TLUIUtility showErrorHint:errMsg];
+        [TLToast showErrorToast:errMsg];
     }];
 }
 

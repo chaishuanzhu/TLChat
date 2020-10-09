@@ -23,22 +23,22 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_setting"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonDown:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
     
-    [TLUIUtility showLoading:@"加载中"];
+    [TLToast showLoading:@"加载中"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    if ([TLUIUtility isShowLoading]) {
-        [TLUIUtility hiddenLoading];
+    if ([TLToast isVisible]) {
+        [TLToast dismiss];
     }
 }
 
 #pragma mark - Delegate -
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    if ([TLUIUtility isShowLoading]) {
-        [TLUIUtility hiddenLoading];
+    if ([TLToast isVisible]) {
+        [TLToast dismiss];
     }
     [super webView:webView didFinishNavigation:navigation];
 }

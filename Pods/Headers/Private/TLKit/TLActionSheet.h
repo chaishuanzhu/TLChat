@@ -1,1 +1,1 @@
-../../../TLKit/TLKit/Classes/TLFunctional/TLActionSheet/TLActionSheet.h
+../../../TLKit/TLKit/Classes/TLComponents/TLActionSheet/TLActionSheet.h

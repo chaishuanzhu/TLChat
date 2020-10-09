@@ -8,6 +8,7 @@
 
 #import "TLAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import "NSFileManager+TLChat.h"
 
 @interface TLAudioPlayer() <AVAudioPlayerDelegate>
 
@@ -45,6 +46,28 @@
         return;
     }
     [self.player play];
+}
+
+- (void)playAudioAtURL:(NSString *)url complete:(void (^)(BOOL))complete {
+    NSString *path = [NSFileManager pathUserChatVoice:url.lastPathComponent];
+    BOOL isExists = [[NSFileManager defaultManager] fileExistsAtPath: path];
+    if (isExists) {
+        [self playAudioAtPath:path complete:complete];
+    } else {
+        @weakify(self)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            @strongify(self)
+            NSData *data = [NSData dataWithContentsOfURL:TLURL(url)];
+            BOOL isOk = [[NSFileManager defaultManager] createFileAtPath:path contents:data attributes:nil];
+            if (isOk) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self playAudioAtPath:path complete:complete];
+                });
+            } else {
+                DDLogError(@"录音文件下载失败");
+            }
+        });
+    }
 }
 
 - (void)stopPlayingAudio

@@ -24,6 +24,7 @@
  */
 - (void)launchInWindow:(UIWindow *)window;
 
+- (void)logout;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

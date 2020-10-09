@@ -8,7 +8,7 @@
 
 #import "TLMomentsViewController.h"
 #import "TLUserDetailViewController.h"
-#import <MWPhotoBrowser/MWPhotoBrowser.h>
+//#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "TLWebViewController.h"
 
 #import "TLMomentHeaderCell.h"
@@ -101,16 +101,16 @@ typedef NS_ENUM(NSInteger, TLMomentsVCNewDataPosition) {
 
 - (void)momentViewClickImage:(NSArray *)images atIndex:(NSInteger)index
 {
-    NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:images.count];
-    for (NSString *imageUrl in images) {
-        MWPhoto *photo = [MWPhoto photoWithURL:TLURL(imageUrl)];
-        [data addObject:photo];
-    }
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:data];
-    [browser setDisplayNavArrows:YES];
-    [browser setCurrentPhotoIndex:index];
-    UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
-    [self presentViewController:broserNavC animated:NO completion:nil];
+//    NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:images.count];
+//    for (NSString *imageUrl in images) {
+//        MWPhoto *photo = [MWPhoto photoWithURL:TLURL(imageUrl)];
+//        [data addObject:photo];
+//    }
+//    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:data];
+//    [browser setDisplayNavArrows:YES];
+//    [browser setCurrentPhotoIndex:index];
+//    UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
+//    [self presentViewController:broserNavC animated:NO completion:nil];
 }
 
 - (void)momentViewWithModel:(TLMoment *)moment jumpToUrl:(NSString *)url

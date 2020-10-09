@@ -21,14 +21,19 @@ target :TLChat do
 
     # --------------------- 第三方Pod -----------------------
     pod 'AFNetworking', '~> 3.1.0'
-    pod 'SDWebImage', '~> 3.7'
+    pod 'SDWebImage'
+    pod 'SDWebImageWebPCoder'
     pod 'Masonry', '~> 1.1.0'
     pod 'MJRefresh', '~> 3.1.15.3'
     pod 'MJExtension', '~> 3.0.13'
     pod 'FMDB', '~> 2.7.2'
     pod 'UMengAnalytics', '~> 4.2.4'
     pod 'CocoaLumberjack', '~> 3.3.0'
-    pod 'MWPhotoBrowser', '~> 2.1.2'
+#    pod 'MWPhotoBrowser'
     pod 'WCDB', '~> 1.0.6'
     pod 'YYText', '~> 1.0.7'
+    pod 'TZImagePickerController'
+
+    # UIDebug
+    pod 'Reveal-SDK', '24', :configurations => ['Debug'] #页面调试
 end

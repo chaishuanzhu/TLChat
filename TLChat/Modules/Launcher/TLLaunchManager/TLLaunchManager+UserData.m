@@ -57,7 +57,7 @@
 /// 下载默认表情包
 - (void)downloadDefaultExpression
 {
-    [TLUIUtility showLoading:nil];
+    [TLToast showLoading:nil];
     __block NSInteger count = 0;
     __block NSInteger successCount = 0;
     TLExpressionGroupModel *group = [[TLExpressionGroupModel alloc] init];
@@ -72,7 +72,7 @@
             successCount ++;
         }
         if (count == 2) {
-            [TLUIUtility showSuccessHint:[NSString stringWithFormat:@"成功下载%ld组表情！", (long)successCount]];
+            [TLToast showSuccessToast:[NSString stringWithFormat:@"成功下载%ld组表情！", (long)successCount]];
         }
     }];
     [group startDownload];
@@ -89,7 +89,7 @@
             successCount ++;
         }
         if (count == 2) {
-            [TLUIUtility showSuccessHint:[NSString stringWithFormat:@"成功下载%ld组表情！", (long)successCount]];
+            [TLToast showSuccessToast:[NSString stringWithFormat:@"成功下载%ld组表情！", (long)successCount]];
         }
     }];
     [group1 startDownload];

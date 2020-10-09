@@ -7,7 +7,6 @@
 //
 
 #import "TLEmojiImageTitleItemCell.h"
-#import "UIImage+Color.h"
 
 @interface TLEmojiImageTitleItemCell ()
 

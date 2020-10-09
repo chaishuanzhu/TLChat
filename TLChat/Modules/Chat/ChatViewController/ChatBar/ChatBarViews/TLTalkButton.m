@@ -8,7 +8,6 @@
 //
 
 #import "TLTalkButton.h"
-#import "UIImage+Color.h"
 
 @interface TLTalkButton ()
 

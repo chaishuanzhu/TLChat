@@ -54,7 +54,14 @@
 - (NSURLRequest *)customURLRequest
 {
     NSError * __autoreleasing requestSerializationError = nil;
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:self.requestMethodString URLString:self.requestURL parameters:self.parameters error:&requestSerializationError];;
+    NSMutableURLRequest *request;
+    if ([self isKindOfClass:[TLUploadRequest class]]) {
+        TLUploadRequest * __autoreleasing uploadReq = (TLUploadRequest*)self;
+        request = [self.requestSerializer multipartFormRequestWithMethod:self.requestMethodString URLString:self.requestURL parameters:self.parameters constructingBodyWithBlock:uploadReq.constructingBodyAction error:&requestSerializationError];
+    } else {
+        request = [self.requestSerializer requestWithMethod:self.requestMethodString URLString:self.requestURL parameters:self.parameters error:&requestSerializationError];
+    }
+
     if (requestSerializationError) {
         NSLog(@"TLNetwork: TLBaseRequest序列化失败");
     }

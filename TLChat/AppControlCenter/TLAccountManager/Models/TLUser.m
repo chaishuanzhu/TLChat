@@ -8,7 +8,6 @@
 //
 
 #import "TLUser.h"
-#import "NSString+PinYin.h"
 
 @implementation TLUser
 
@@ -22,6 +21,15 @@
         }];
     }
     return self;
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+        @"userID":@"id",
+        @"username":@"name",
+        @"nikeName":@"nickname",
+        @"avatarURL":@"avatar"
+    };
 }
 
 - (void)setUsername:(NSString *)username

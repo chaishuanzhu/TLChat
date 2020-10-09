@@ -9,6 +9,10 @@
 
 #import "TLSDKManager.h"
 #import "TLSDKConfigKey.h"
+#import "IMClientManager.h"
+
+#import <SDWebImage/SDWebImage.h>
+#import <SDWebImageWebPCoder/SDWebImageWebPCoder.h>
 
 @implementation TLSDKManager
 
@@ -30,8 +34,16 @@
     [[UMAnalyticsConfig sharedInstance] setChannelId:APP_CHANNEL];
     [MobClick startWithConfigure:[UMAnalyticsConfig sharedInstance]];
 
+    // IM连接
+    [[IMClientManager sharedInstance] initMobileIMSDK];
+
     // Mob SMS
     //    [SMSSDK registerApp:MOB_SMS_APPKEY withSecret:MOB_SMS_SECRET];
+
+    // SDImage
+//    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
+//    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
+//    [[SDWebImageDownloader sharedDownloader] setValue:@"image/webp,image/*,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
     
     // 日志
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -40,6 +52,11 @@
     fileLogger.rollingFrequency = 60 * 60 * 24;
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     [DDLog addLogger:fileLogger];
+}
+
+- (void)releaseSDK {
+    // 释放IM核心占用的资源
+    [[IMClientManager sharedInstance] releaseMobileIMSDK];
 }
 
 @end

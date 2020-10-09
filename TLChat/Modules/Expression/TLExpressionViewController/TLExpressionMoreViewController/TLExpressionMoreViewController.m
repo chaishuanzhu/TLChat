@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger, TLExpressionMoreSectionType) {
 - (void)requestDataIfNeed
 {
     if (self.sectionForTag(TLExpressionMoreSectionTypeExprs).dataModelArray.count == 0) {
-        [TLUIUtility showLoading:nil];
+        [TLToast showLoading:nil];
         [self requestExpressionMoreDataWithPageIndex:1];
     }
 }
@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger, TLExpressionMoreSectionType) {
     @weakify(self);
     [TLExpressionGroupModel requestExpressionMoreListByPageIndex:pageIndex success:^(NSArray *successData) {
         @strongify(self);
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         if (pageIndex == 1) {
             self.sectionForTag(TLExpressionMoreSectionTypeExprs).clearItems();
         }
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, TLExpressionMoreSectionType) {
         [self reloadView];
     } failure:^(id failureData) {
         @strongify(self);
-        [TLUIUtility hiddenLoading];
+        [TLToast dismiss];
         [self.collectionView tt_endLoadMore];
         [self.view showErrorViewWithTitle:failureData retryAction:^(id userData) {
             @strongify(self);

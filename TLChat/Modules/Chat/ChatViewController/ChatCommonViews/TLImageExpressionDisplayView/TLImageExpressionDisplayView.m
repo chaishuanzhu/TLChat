@@ -56,7 +56,7 @@ static NSString *curID;
     curID = emoji.eId;
     NSData *data = [NSData dataWithContentsOfFile:emoji.path];
     if (data) {
-        [self.imageView setImage:[UIImage sd_animatedGIFWithData:data]];
+        [self.imageView setImage:[UIImage sd_imageWithGIFData:data]];
     }
     else {
         NSString *urlString = [TLExpressionModel expressionDownloadURLWithEid:emoji.eId];
@@ -66,7 +66,7 @@ static NSString *curID;
                     NSData *data = [NSData dataWithContentsOfURL:TLURL(urlString)];
                     if ([urlString containsString:curID]) {
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [self.imageView setImage:[UIImage sd_animatedGIFWithData:data]];
+                            [self.imageView setImage:[UIImage sd_imageWithGIFData:data]];
                         });
                     }
                 });

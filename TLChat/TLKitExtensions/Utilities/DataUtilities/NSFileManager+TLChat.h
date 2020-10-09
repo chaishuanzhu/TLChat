@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSFileManager+Paths.h"
 
 @interface NSFileManager (TLChat)
 

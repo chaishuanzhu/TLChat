@@ -10,6 +10,7 @@
 #import "TLLoginViewController.h"
 #import "TLRegisterViewController.h"
 #import "TLUserHelper.h"
+#import "TLMessageManager.h"
 
 #define     HEIGHT_BUTTON       50
 #define     EDGE_BUTTON         35
@@ -19,6 +20,12 @@ typedef NS_ENUM(NSInteger, TLAccountButtonType) {
     TLAccountButtonTypeLogin,
     TLAccountButtonTypeTest,
 };
+
+@interface TLAccountViewController ()
+
+@property (nonatomic, copy) ObserverCompletion onLoginSucessObserver;
+
+@end
 
 @implementation TLAccountViewController
 
@@ -82,6 +89,37 @@ typedef NS_ENUM(NSInteger, TLAccountButtonType) {
     }];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    @weakify(self)
+    self.onLoginSucessObserver = ^(id observerble, id data) {
+        @strongify(self)
+        [TLToast dismiss];
+        // 服务端返回的登陆结果值
+        int code = [(NSNumber *)data intValue];
+        // 登陆成功
+        if(code == 0)
+        {
+            // TODO 提示：登陆MobileIMSDK服务器成功后的事情在此实现即可
+            // TODO 提示：登陆MobileIMSDK服务器成功后的事情在此实现即可
+            // TODO 提示：登陆MobileIMSDK服务器成功后的事情在此实现即可
+            // TODO 提示：登陆MobileIMSDK服务器成功后的事情在此实现即可
+            // TODO 提示：登陆MobileIMSDK服务器成功后的事情在此实现即可
+
+            // 进入主界面
+//            self.loginSuccess();
+            if (self.loginSuccess) {
+                self.loginSuccess();
+            }
+        } else {// 登陆失败
+            [TLAlertView showWithTitle:@"友情提示"
+                               message:[NSString stringWithFormat:@"Sorry，登陆失败，错误码=%d", code] cancelButtonTitle:@"知道了"];
+        }
+        [[TLMessageManager sharedInstance] setLoginOkForLaunchObserver:nil];
+    };
+}
+
 #pragma mark - # Event Response
 - (void)buttonClicked:(UIButton *)sender
 {
@@ -111,9 +149,19 @@ typedef NS_ENUM(NSInteger, TLAccountButtonType) {
     }
     else if (sender.tag == TLAccountButtonTypeTest) {
         [[TLUserHelper sharedHelper] loginTestAccount];
-        if (self.loginSuccess) {
-            self.loginSuccess();
-        }
+        [self imLogin];
+    }
+}
+
+- (void)imLogin {
+    [TLToast showLoading:@"登录中。。。"];
+    [[TLMessageManager sharedInstance] setLoginOkForLaunchObserver:self.onLoginSucessObserver];
+    NSString *userID = [TLUserHelper sharedHelper].userID;
+    int code = [[TLMessageManager sharedInstance] loginWithID:userID andToken:@"123456"];
+    if (code == COMMON_CODE_OK) {
+        DDLogDebug(@"[用户登录成功]uid----:%@",userID);
+    } else {
+        DDLogDebug(@"[用户登录失败]uid----:%@，error code：-----%d",userID, code);
     }
 }
 

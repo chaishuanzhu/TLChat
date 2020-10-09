@@ -21,8 +21,6 @@
 		C20B8331204EA3140086F5E7 /* TLMineInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C20B832F204EA3140086F5E7 /* TLMineInfoAvatarCell.m */; };
 		C20B8335204EA31A0086F5E7 /* TLMyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20B8334204EA3190086F5E7 /* TLMyQRCodeViewController.m */; };
 		C20B8339204EA3300086F5E7 /* TLWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20B8338204EA32F0086F5E7 /* TLWalletViewController.m */; };
-		C2218BEE20501D79005A2947 /* TLPictureCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2218BEC20501D78005A2947 /* TLPictureCarouselView.m */; };
-		C2218BEF20501D79005A2947 /* TLPictureCarouselViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2218BED20501D78005A2947 /* TLPictureCarouselViewCell.m */; };
 		C2218BF320501DEE005A2947 /* TLQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2218BF120501DED005A2947 /* TLQRCodeViewController.m */; };
 		C2218BF520501E2D005A2947 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2218BF420501E2D005A2947 /* Common.xcassets */; };
 		C2218BFF20501F88005A2947 /* TLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2218BF720501F88005A2947 /* TLLoginViewController.m */; };
@@ -287,6 +285,35 @@
 		C2EE334520500E2A00467298 /* TLChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE333A20500E2A00467298 /* TLChatDetailViewController.m */; };
 		C2EE334620500E2A00467298 /* TLUserGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE333E20500E2A00467298 /* TLUserGroupCell.m */; };
 		C2EE334720500E2A00467298 /* TLUserGroupItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE333F20500E2A00467298 /* TLUserGroupItemCell.m */; };
+		F56876092526D95200CB7554 /* LocalDataSender.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875C82526D95200CB7554 /* LocalDataSender.m */; };
+		F568760A2526D95200CB7554 /* KeepAliveDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875CB2526D95200CB7554 /* KeepAliveDaemon.m */; };
+		F568760B2526D95200CB7554 /* LocalSocketProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875CF2526D95200CB7554 /* LocalSocketProvider.m */; };
+		F568760C2526D95200CB7554 /* QoS4ReciveDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875D02526D95200CB7554 /* QoS4ReciveDaemon.m */; };
+		F568760D2526D95200CB7554 /* LocalDataReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875D12526D95200CB7554 /* LocalDataReciever.m */; };
+		F568760E2526D95200CB7554 /* AutoReLoginDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875D22526D95200CB7554 /* AutoReLoginDaemon.m */; };
+		F568760F2526D95200CB7554 /* QoS4SendDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875D42526D95200CB7554 /* QoS4SendDaemon.m */; };
+		F56876102526D95200CB7554 /* PKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875D72526D95200CB7554 /* PKeepAlive.m */; };
+		F56876112526D95200CB7554 /* PLoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875DA2526D95200CB7554 /* PLoginInfo.m */; };
+		F56876122526D95200CB7554 /* CharsetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875DE2526D95200CB7554 /* CharsetHelper.m */; };
+		F56876132526D95200CB7554 /* ProtocalFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875DF2526D95200CB7554 /* ProtocalFactory.m */; };
+		F56876142526D95200CB7554 /* PKeepAliveResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875E12526D95200CB7554 /* PKeepAliveResponse.m */; };
+		F56876152526D95200CB7554 /* PErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875E32526D95200CB7554 /* PErrorResponse.m */; };
+		F56876162526D95200CB7554 /* PLoginInfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875E42526D95200CB7554 /* PLoginInfoResponse.m */; };
+		F56876172526D95200CB7554 /* Protocal.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875E52526D95200CB7554 /* Protocal.m */; };
+		F56876182526D95200CB7554 /* ConfigEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875E92526D95200CB7554 /* ConfigEntity.m */; };
+		F56876192526D95200CB7554 /* NSMutableDictionary+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875EC2526D95200CB7554 /* NSMutableDictionary+Ext.m */; };
+		F568761A2526D95200CB7554 /* UDPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875F32526D95200CB7554 /* UDPUtils.m */; };
+		F568761B2526D95200CB7554 /* ToolKits.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875F62526D95200CB7554 /* ToolKits.m */; };
+		F568761C2526D95200CB7554 /* ClientCoreSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875F72526D95200CB7554 /* ClientCoreSDK.m */; };
+		F568761D2526D95200CB7554 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875FB2526D95200CB7554 /* RMMapper.m */; };
+		F568761E2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F56875FF2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.m */; };
+		F568761F2526D95200CB7554 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876012526D95200CB7554 /* NSObject+RMArchivable.m */; };
+		F56876202526D95200CB7554 /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876022526D95200CB7554 /* NSObject+RMCopyable.m */; };
+		F56876212526D95200CB7554 /* MBGCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876052526D95200CB7554 /* MBGCDAsyncUdpSocket.m */; };
+		F56876222526D95200CB7554 /* MBReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876072526D95200CB7554 /* MBReachability.m */; };
+		F56876272526D9C600CB7554 /* IMClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876262526D9C600CB7554 /* IMClientManager.m */; };
+		F56876872529B45000CB7554 /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876862529B45000CB7554 /* UIImage+Compress.m */; };
+		F56876F22529D4FA00CB7554 /* IMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F56876F12529D4FA00CB7554 /* IMResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,11 +381,6 @@
 		C20B8337204EA32F0086F5E7 /* TLWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLWalletViewController.h; sourceTree = "<group>"; };
 		C20B8338204EA32F0086F5E7 /* TLWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLWalletViewController.m; sourceTree = "<group>"; };
 		C2142EC61C5326C30030B29B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		C2218BE920501D78005A2947 /* TLPictureCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPictureCarouselView.h; sourceTree = "<group>"; };
-		C2218BEA20501D78005A2947 /* TLPictureCarouselViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPictureCarouselViewCell.h; sourceTree = "<group>"; };
-		C2218BEB20501D78005A2947 /* TLPictureCarouselProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPictureCarouselProtocol.h; sourceTree = "<group>"; };
-		C2218BEC20501D78005A2947 /* TLPictureCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPictureCarouselView.m; sourceTree = "<group>"; };
-		C2218BED20501D78005A2947 /* TLPictureCarouselViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPictureCarouselViewCell.m; sourceTree = "<group>"; };
 		C2218BF120501DED005A2947 /* TLQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLQRCodeViewController.m; sourceTree = "<group>"; };
 		C2218BF220501DED005A2947 /* TLQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLQRCodeViewController.h; sourceTree = "<group>"; };
 		C2218BF420501E2D005A2947 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
@@ -903,6 +925,70 @@
 		C2EE333E20500E2A00467298 /* TLUserGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserGroupCell.m; sourceTree = "<group>"; };
 		C2EE333F20500E2A00467298 /* TLUserGroupItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserGroupItemCell.m; sourceTree = "<group>"; };
 		F47069788539839E1FB073F9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56875C72526D95200CB7554 /* LocalSocketProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalSocketProvider.h; sourceTree = "<group>"; };
+		F56875C82526D95200CB7554 /* LocalDataSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataSender.m; sourceTree = "<group>"; };
+		F56875C92526D95200CB7554 /* LocalDataReciever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataReciever.h; sourceTree = "<group>"; };
+		F56875CA2526D95200CB7554 /* QoS4ReciveDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QoS4ReciveDaemon.h; sourceTree = "<group>"; };
+		F56875CB2526D95200CB7554 /* KeepAliveDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeepAliveDaemon.m; sourceTree = "<group>"; };
+		F56875CC2526D95200CB7554 /* AutoReLoginDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoReLoginDaemon.h; sourceTree = "<group>"; };
+		F56875CD2526D95200CB7554 /* QoS4SendDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QoS4SendDaemon.h; sourceTree = "<group>"; };
+		F56875CE2526D95200CB7554 /* LocalDataSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataSender.h; sourceTree = "<group>"; };
+		F56875CF2526D95200CB7554 /* LocalSocketProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalSocketProvider.m; sourceTree = "<group>"; };
+		F56875D02526D95200CB7554 /* QoS4ReciveDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QoS4ReciveDaemon.m; sourceTree = "<group>"; };
+		F56875D12526D95200CB7554 /* LocalDataReciever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataReciever.m; sourceTree = "<group>"; };
+		F56875D22526D95200CB7554 /* AutoReLoginDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoReLoginDaemon.m; sourceTree = "<group>"; };
+		F56875D32526D95200CB7554 /* KeepAliveDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepAliveDaemon.h; sourceTree = "<group>"; };
+		F56875D42526D95200CB7554 /* QoS4SendDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QoS4SendDaemon.m; sourceTree = "<group>"; };
+		F56875D62526D95200CB7554 /* PKeepAliveResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKeepAliveResponse.h; sourceTree = "<group>"; };
+		F56875D72526D95200CB7554 /* PKeepAlive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKeepAlive.m; sourceTree = "<group>"; };
+		F56875D82526D95200CB7554 /* ErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCode.h; sourceTree = "<group>"; };
+		F56875D92526D95200CB7554 /* PErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PErrorResponse.h; sourceTree = "<group>"; };
+		F56875DA2526D95200CB7554 /* PLoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLoginInfo.m; sourceTree = "<group>"; };
+		F56875DB2526D95200CB7554 /* ProtocalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocalType.h; sourceTree = "<group>"; };
+		F56875DC2526D95200CB7554 /* Protocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocal.h; sourceTree = "<group>"; };
+		F56875DD2526D95200CB7554 /* PLoginInfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLoginInfoResponse.h; sourceTree = "<group>"; };
+		F56875DE2526D95200CB7554 /* CharsetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharsetHelper.m; sourceTree = "<group>"; };
+		F56875DF2526D95200CB7554 /* ProtocalFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocalFactory.m; sourceTree = "<group>"; };
+		F56875E02526D95200CB7554 /* PKeepAlive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKeepAlive.h; sourceTree = "<group>"; };
+		F56875E12526D95200CB7554 /* PKeepAliveResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKeepAliveResponse.m; sourceTree = "<group>"; };
+		F56875E22526D95200CB7554 /* PLoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLoginInfo.h; sourceTree = "<group>"; };
+		F56875E32526D95200CB7554 /* PErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PErrorResponse.m; sourceTree = "<group>"; };
+		F56875E42526D95200CB7554 /* PLoginInfoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLoginInfoResponse.m; sourceTree = "<group>"; };
+		F56875E52526D95200CB7554 /* Protocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protocal.m; sourceTree = "<group>"; };
+		F56875E62526D95200CB7554 /* ProtocalFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocalFactory.h; sourceTree = "<group>"; };
+		F56875E72526D95200CB7554 /* CharsetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharsetHelper.h; sourceTree = "<group>"; };
+		F56875E82526D95200CB7554 /* ClientCoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientCoreSDK.h; sourceTree = "<group>"; };
+		F56875E92526D95200CB7554 /* ConfigEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEntity.m; sourceTree = "<group>"; };
+		F56875EB2526D95200CB7554 /* NSMutableDictionary+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Ext.h"; sourceTree = "<group>"; };
+		F56875EC2526D95200CB7554 /* NSMutableDictionary+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Ext.m"; sourceTree = "<group>"; };
+		F56875ED2526D95200CB7554 /* CompletionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionDefine.h; sourceTree = "<group>"; };
+		F56875EF2526D95200CB7554 /* ChatMessageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageEvent.h; sourceTree = "<group>"; };
+		F56875F02526D95200CB7554 /* ChatBaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBaseEvent.h; sourceTree = "<group>"; };
+		F56875F12526D95200CB7554 /* MessageQoSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageQoSEvent.h; sourceTree = "<group>"; };
+		F56875F32526D95200CB7554 /* UDPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPUtils.m; sourceTree = "<group>"; };
+		F56875F42526D95200CB7554 /* ToolKits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKits.h; sourceTree = "<group>"; };
+		F56875F52526D95200CB7554 /* UDPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPUtils.h; sourceTree = "<group>"; };
+		F56875F62526D95200CB7554 /* ToolKits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKits.m; sourceTree = "<group>"; };
+		F56875F72526D95200CB7554 /* ClientCoreSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientCoreSDK.m; sourceTree = "<group>"; };
+		F56875F82526D95200CB7554 /* ConfigEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEntity.h; sourceTree = "<group>"; };
+		F56875FB2526D95200CB7554 /* RMMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapper.m; sourceTree = "<group>"; };
+		F56875FC2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+RMSaveCustomObject.h"; sourceTree = "<group>"; };
+		F56875FD2526D95200CB7554 /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
+		F56875FE2526D95200CB7554 /* NSObject+RMCopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMCopyable.h"; sourceTree = "<group>"; };
+		F56875FF2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+RMSaveCustomObject.m"; sourceTree = "<group>"; };
+		F56876002526D95200CB7554 /* RMMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapper.h; sourceTree = "<group>"; };
+		F56876012526D95200CB7554 /* NSObject+RMArchivable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMArchivable.m"; sourceTree = "<group>"; };
+		F56876022526D95200CB7554 /* NSObject+RMCopyable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMCopyable.m"; sourceTree = "<group>"; };
+		F56876042526D95200CB7554 /* MBGCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		F56876052526D95200CB7554 /* MBGCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		F56876072526D95200CB7554 /* MBReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBReachability.m; sourceTree = "<group>"; };
+		F56876082526D95200CB7554 /* MBReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBReachability.h; sourceTree = "<group>"; };
+		F56876252526D9C600CB7554 /* IMClientManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMClientManager.h; sourceTree = "<group>"; };
+		F56876262526D9C600CB7554 /* IMClientManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMClientManager.m; sourceTree = "<group>"; };
+		F56876852529B45000CB7554 /* UIImage+Compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
+		F56876862529B45000CB7554 /* UIImage+Compress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		F56876F02529D4FA00CB7554 /* IMResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMResponse.h; sourceTree = "<group>"; };
+		F56876F12529D4FA00CB7554 /* IMResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1072,18 +1158,6 @@
 				C20B8338204EA32F0086F5E7 /* TLWalletViewController.m */,
 			);
 			path = TLWalletViewController;
-			sourceTree = "<group>";
-		};
-		C2218BE820501D78005A2947 /* TLPictureCarouselView */ = {
-			isa = PBXGroup;
-			children = (
-				C2218BEB20501D78005A2947 /* TLPictureCarouselProtocol.h */,
-				C2218BEA20501D78005A2947 /* TLPictureCarouselViewCell.h */,
-				C2218BED20501D78005A2947 /* TLPictureCarouselViewCell.m */,
-				C2218BE920501D78005A2947 /* TLPictureCarouselView.h */,
-				C2218BEC20501D78005A2947 /* TLPictureCarouselView.m */,
-			);
-			path = TLPictureCarouselView;
 			sourceTree = "<group>";
 		};
 		C2218BF020501DED005A2947 /* TLQRCodeViewController */ = {
@@ -1443,7 +1517,6 @@
 		C2531ABE204E3F9700D27C99 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C2218BE820501D78005A2947 /* TLPictureCarouselView */,
 				C278BC8620501C800063E728 /* TLViewController */,
 				C2531AC2204E3FBF00D27C99 /* TLMenuItem */,
 				C2531ABF204E3FBF00D27C99 /* TLSettingItem */,
@@ -2037,11 +2110,14 @@
 		C2D7C8851F72107D00648CED /* AppControlCenter */ = {
 			isa = PBXGroup;
 			children = (
+				F56875C42526D95200CB7554 /* MobileIMSDK4i */,
 				C2D7C8861F7210AD00648CED /* AppConfig */,
 				C2D7CC601F72844200648CED /* TLDBManager */,
 				C2D7CBD81F72497900648CED /* TLAccountManager */,
 				C2D7CBD91F72497900648CED /* TLUserManager */,
 				C2D7CBE41F7267E300648CED /* TLMessageCenter */,
+				F568762A2526D9CC00CB7554 /* IMClientManager */,
+				F56876F52529D50100CB7554 /* IMResponse */,
 			);
 			path = AppControlCenter;
 			sourceTree = "<group>";
@@ -2817,6 +2893,7 @@
 			isa = PBXGroup;
 			children = (
 				C284AEA31FF24DB600075E59 /* TLKitExtension.h */,
+				F568768A2529B45B00CB7554 /* UIKit */,
 				C284AE9F1FF24DAD00075E59 /* Shortcut */,
 				C2D7C8F61F7246CC00648CED /* Utilities */,
 				C2531ABE204E3F9700D27C99 /* Components */,
@@ -3136,6 +3213,178 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F56875C42526D95200CB7554 /* MobileIMSDK4i */ = {
+			isa = PBXGroup;
+			children = (
+				F56875C52526D95200CB7554 /* Core */,
+				F56875F92526D95200CB7554 /* Thirdpart */,
+			);
+			path = MobileIMSDK4i;
+			sourceTree = "<group>";
+		};
+		F56875C52526D95200CB7554 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F56875C62526D95200CB7554 /* Impl */,
+				F56875D52526D95200CB7554 /* Protocal */,
+				F56875E82526D95200CB7554 /* ClientCoreSDK.h */,
+				F56875E92526D95200CB7554 /* ConfigEntity.m */,
+				F56875EA2526D95200CB7554 /* Other */,
+				F56875EE2526D95200CB7554 /* Delegate */,
+				F56875F22526D95200CB7554 /* Utils */,
+				F56875F72526D95200CB7554 /* ClientCoreSDK.m */,
+				F56875F82526D95200CB7554 /* ConfigEntity.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F56875C62526D95200CB7554 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F56875C72526D95200CB7554 /* LocalSocketProvider.h */,
+				F56875C82526D95200CB7554 /* LocalDataSender.m */,
+				F56875C92526D95200CB7554 /* LocalDataReciever.h */,
+				F56875CA2526D95200CB7554 /* QoS4ReciveDaemon.h */,
+				F56875CB2526D95200CB7554 /* KeepAliveDaemon.m */,
+				F56875CC2526D95200CB7554 /* AutoReLoginDaemon.h */,
+				F56875CD2526D95200CB7554 /* QoS4SendDaemon.h */,
+				F56875CE2526D95200CB7554 /* LocalDataSender.h */,
+				F56875CF2526D95200CB7554 /* LocalSocketProvider.m */,
+				F56875D02526D95200CB7554 /* QoS4ReciveDaemon.m */,
+				F56875D12526D95200CB7554 /* LocalDataReciever.m */,
+				F56875D22526D95200CB7554 /* AutoReLoginDaemon.m */,
+				F56875D32526D95200CB7554 /* KeepAliveDaemon.h */,
+				F56875D42526D95200CB7554 /* QoS4SendDaemon.m */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		F56875D52526D95200CB7554 /* Protocal */ = {
+			isa = PBXGroup;
+			children = (
+				F56875D62526D95200CB7554 /* PKeepAliveResponse.h */,
+				F56875D72526D95200CB7554 /* PKeepAlive.m */,
+				F56875D82526D95200CB7554 /* ErrorCode.h */,
+				F56875D92526D95200CB7554 /* PErrorResponse.h */,
+				F56875DA2526D95200CB7554 /* PLoginInfo.m */,
+				F56875DB2526D95200CB7554 /* ProtocalType.h */,
+				F56875DC2526D95200CB7554 /* Protocal.h */,
+				F56875DD2526D95200CB7554 /* PLoginInfoResponse.h */,
+				F56875DE2526D95200CB7554 /* CharsetHelper.m */,
+				F56875DF2526D95200CB7554 /* ProtocalFactory.m */,
+				F56875E02526D95200CB7554 /* PKeepAlive.h */,
+				F56875E12526D95200CB7554 /* PKeepAliveResponse.m */,
+				F56875E22526D95200CB7554 /* PLoginInfo.h */,
+				F56875E32526D95200CB7554 /* PErrorResponse.m */,
+				F56875E42526D95200CB7554 /* PLoginInfoResponse.m */,
+				F56875E52526D95200CB7554 /* Protocal.m */,
+				F56875E62526D95200CB7554 /* ProtocalFactory.h */,
+				F56875E72526D95200CB7554 /* CharsetHelper.h */,
+			);
+			path = Protocal;
+			sourceTree = "<group>";
+		};
+		F56875EA2526D95200CB7554 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F56875EB2526D95200CB7554 /* NSMutableDictionary+Ext.h */,
+				F56875EC2526D95200CB7554 /* NSMutableDictionary+Ext.m */,
+				F56875ED2526D95200CB7554 /* CompletionDefine.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F56875EE2526D95200CB7554 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F56875EF2526D95200CB7554 /* ChatMessageEvent.h */,
+				F56875F02526D95200CB7554 /* ChatBaseEvent.h */,
+				F56875F12526D95200CB7554 /* MessageQoSEvent.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F56875F22526D95200CB7554 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F56875F32526D95200CB7554 /* UDPUtils.m */,
+				F56875F42526D95200CB7554 /* ToolKits.h */,
+				F56875F52526D95200CB7554 /* UDPUtils.h */,
+				F56875F62526D95200CB7554 /* ToolKits.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F56875F92526D95200CB7554 /* Thirdpart */ = {
+			isa = PBXGroup;
+			children = (
+				F56875FA2526D95200CB7554 /* RMMapper */,
+				F56876032526D95200CB7554 /* UDP */,
+				F56876062526D95200CB7554 /* Reachability */,
+			);
+			path = Thirdpart;
+			sourceTree = "<group>";
+		};
+		F56875FA2526D95200CB7554 /* RMMapper */ = {
+			isa = PBXGroup;
+			children = (
+				F56875FB2526D95200CB7554 /* RMMapper.m */,
+				F56875FC2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.h */,
+				F56875FD2526D95200CB7554 /* NSObject+RMArchivable.h */,
+				F56875FE2526D95200CB7554 /* NSObject+RMCopyable.h */,
+				F56875FF2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.m */,
+				F56876002526D95200CB7554 /* RMMapper.h */,
+				F56876012526D95200CB7554 /* NSObject+RMArchivable.m */,
+				F56876022526D95200CB7554 /* NSObject+RMCopyable.m */,
+			);
+			path = RMMapper;
+			sourceTree = "<group>";
+		};
+		F56876032526D95200CB7554 /* UDP */ = {
+			isa = PBXGroup;
+			children = (
+				F56876042526D95200CB7554 /* MBGCDAsyncUdpSocket.h */,
+				F56876052526D95200CB7554 /* MBGCDAsyncUdpSocket.m */,
+			);
+			path = UDP;
+			sourceTree = "<group>";
+		};
+		F56876062526D95200CB7554 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F56876072526D95200CB7554 /* MBReachability.m */,
+				F56876082526D95200CB7554 /* MBReachability.h */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		F568762A2526D9CC00CB7554 /* IMClientManager */ = {
+			isa = PBXGroup;
+			children = (
+				F56876252526D9C600CB7554 /* IMClientManager.h */,
+				F56876262526D9C600CB7554 /* IMClientManager.m */,
+			);
+			path = IMClientManager;
+			sourceTree = "<group>";
+		};
+		F568768A2529B45B00CB7554 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F56876852529B45000CB7554 /* UIImage+Compress.h */,
+				F56876862529B45000CB7554 /* UIImage+Compress.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F56876F52529D50100CB7554 /* IMResponse */ = {
+			isa = PBXGroup;
+			children = (
+				F56876F02529D4FA00CB7554 /* IMResponse.h */,
+				F56876F12529D4FA00CB7554 /* IMResponse.m */,
+			);
+			path = IMResponse;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3149,6 +3398,7 @@
 				C2097EE11C52326500163B5C /* Resources */,
 				FF9F8C675570F5C5117DA386 /* [CP] Copy Pods Resources */,
 				C23EE3CB1F738F230069885F /* CopyFiles */,
+				FD3ADE6B886E6CC91437B965 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3206,15 +3456,17 @@
 				TargetAttributes = {
 					C2097EE21C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = QPLPPHZKSV;
+						DevelopmentTeam = 257L6729BX;
 						ProvisioningStyle = Automatic;
 					};
 					C2097EFB1C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 257L6729BX;
 						TestTargetID = C2097EE21C52326500163B5C;
 					};
 					C2097F061C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 257L6729BX;
 						TestTargetID = C2097EE21C52326500163B5C;
 					};
 				};
@@ -3303,6 +3555,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD3ADE6B886E6CC91437B965 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TLChat/Pods-TLChat-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TLChat/Pods-TLChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FF9F8C675570F5C5117DA386 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3311,14 +3581,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TLChat/Pods-TLChat-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TLKit/TLKit/Classes/TLComponents/TLAlwaysActivity/silence.m4a",
+				"${PODS_ROOT}/TLKit/TLKit/Classes/TLComponents/TLAlwaysActivity/test.m4a",
+				"${PODS_ROOT}/TLKit/TLKit/Classes/TLComponents/TLColor/TLColorTable.txt",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/silence.m4a",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/test.m4a",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TLColorTable.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3334,10 +3610,12 @@
 			files = (
 				C249935C1FFB8C7400F69B16 /* TLExpressionDetailItemCell.m in Sources */,
 				C292D3731F7A54C5007EB0A6 /* NSURL+TLNetwork.m in Sources */,
+				F56876152526D95200CB7554 /* PErrorResponse.m in Sources */,
 				C292D3231F7A4B67007EB0A6 /* TLMoment.m in Sources */,
 				C249932B1FFB646900F69B16 /* TLExpressionGroupModel+ChosenRequest.m in Sources */,
 				C2D7CB3C1F72470400648CED /* TLEmojiGroupDisplayModel.m in Sources */,
 				C249934B1FFB84A100F69B16 /* TLExpressionMoreCell.m in Sources */,
+				F568760A2526D95200CB7554 /* KeepAliveDaemon.m in Sources */,
 				C2D7CB2F1F72470400648CED /* TLChatMessageDisplayView+Delegate.m in Sources */,
 				C24993281FFB645100F69B16 /* TLExpressionItemCell.m in Sources */,
 				C2D7CC231F726D4900648CED /* TLUserGroup.m in Sources */,
@@ -3353,12 +3631,15 @@
 				C243B6551F7A5B670059A886 /* TLResponse.m in Sources */,
 				C2D7CC051F7267F000648CED /* TLMessageManager+ConversationRecord.m in Sources */,
 				C2D7CC2A1F726D7B00648CED /* TLGroup.m in Sources */,
+				F56876162526D95200CB7554 /* PLoginInfoResponse.m in Sources */,
 				C249DB852003AC4300702FA4 /* TLGroupViewController.m in Sources */,
 				C29C6A94200494DD0058ED75 /* TLUserDetailViewController.m in Sources */,
 				C249DBBD2003AE5800702FA4 /* TLExpressionSearchResultViewController.m in Sources */,
 				C2D7CC211F726D4900648CED /* TLUserChatSetting.m in Sources */,
+				F56876182526D95200CB7554 /* ConfigEntity.m in Sources */,
 				C2D7CB481F72470400648CED /* TLChatViewController.m in Sources */,
 				C2EE3266204F93CC00467298 /* TLGameViewController.m in Sources */,
+				F56876222526D95200CB7554 /* MBReachability.m in Sources */,
 				C29C6B292004B81C0058ED75 /* TLNewFriendViewController.m in Sources */,
 				C2EE32CA204FD03600467298 /* TLMyExpressionCell.m in Sources */,
 				C2531B29204E85C300D27C99 /* TLAboutViewController.m in Sources */,
@@ -3377,12 +3658,15 @@
 				C2D7CC141F726D0900648CED /* TLRootProxy.m in Sources */,
 				C2218BF320501DEE005A2947 /* TLQRCodeViewController.m in Sources */,
 				C2218C2120502098005A2947 /* TLConversationViewController.m in Sources */,
+				F56876132526D95200CB7554 /* ProtocalFactory.m in Sources */,
+				F568760C2526D95200CB7554 /* QoS4ReciveDaemon.m in Sources */,
 				C2D7CBA01F72470500648CED /* TLSDKManager.m in Sources */,
 				C2D7CB441F72470400648CED /* TLBaseKeyboard.m in Sources */,
 				C2531ACF204E445500D27C99 /* TLSettingItemBaseCell.m in Sources */,
 				C243B6521F7A5B5D0059A886 /* UIButton+TLWebImage.m in Sources */,
 				C2D7CB3E1F72470400648CED /* TLEmojiKeyboard+EmojiGroupControl.m in Sources */,
 				C249DB972003AC4300702FA4 /* TLTagsViewController.m in Sources */,
+				F56876202526D95200CB7554 /* NSObject+RMCopyable.m in Sources */,
 				C2218C2020502098005A2947 /* TLConversationAngel.m in Sources */,
 				C2D7CC541F7281D200648CED /* TLMessage.m in Sources */,
 				C2D7CB291F72470400648CED /* TLImageMessageCell.m in Sources */,
@@ -3392,10 +3676,10 @@
 				C2D7CBDF1F7249C500648CED /* TLUserHelper.m in Sources */,
 				C2EE3261204F938700467298 /* TLScannerView.m in Sources */,
 				C2D7CB411F72470400648CED /* TLMoreKeyboardItem.m in Sources */,
+				F56876F22529D4FA00CB7554 /* IMResponse.m in Sources */,
 				C2EE3317204FFF7200467298 /* TLChatBackgroundViewController.m in Sources */,
 				C29C6AA5200497030058ED75 /* TLOfficialAccountViewController.m in Sources */,
 				C2EE327A204F93DF00467298 /* TLShakeSettingViewController.m in Sources */,
-				C2218BEE20501D79005A2947 /* TLPictureCarouselView.m in Sources */,
 				C243B6531F7A5B5F0059A886 /* TLImageDownloader.m in Sources */,
 				C2EE3315204FFF7200467298 /* TLChatBackgroundSelectViewController.m in Sources */,
 				C2D7CB9C1F72470400648CED /* TLAppDelegate.m in Sources */,
@@ -3409,11 +3693,14 @@
 				C23EE4761F7392550069885F /* TLExpressionChosenViewController.m in Sources */,
 				C2D7CC581F7281D200648CED /* TLVoiceMessage.m in Sources */,
 				C2D7CC001F7267F000648CED /* TLEmojiKBHelper.m in Sources */,
+				F568761F2526D95200CB7554 /* NSObject+RMArchivable.m in Sources */,
 				C20B8330204EA3140086F5E7 /* TLMineInfoViewController.m in Sources */,
 				C2EE334620500E2A00467298 /* TLUserGroupCell.m in Sources */,
 				C29C6B302004B88B0058ED75 /* TLFriendFindViewController.m in Sources */,
 				C2D7CC061F7267F000648CED /* TLMessageManager+MessageRecord.m in Sources */,
+				F568760E2526D95200CB7554 /* AutoReLoginDaemon.m in Sources */,
 				C29C6A92200494DD0058ED75 /* TLUserDetailTitleCell.m in Sources */,
+				F56876872529B45000CB7554 /* UIImage+Compress.m in Sources */,
 				C243B65B1F7A5B7E0059A886 /* TLNetworkAgent.m in Sources */,
 				C29C6A2A20048E360058ED75 /* TLGroupSearchResultViewController.m in Sources */,
 				C29C6B1D2004B8010058ED75 /* TLMobileContactsItemCell.m in Sources */,
@@ -3431,6 +3718,7 @@
 				C2EE326F204F93D300467298 /* TLBottleButton.m in Sources */,
 				C29C6A8B200494DD0058ED75 /* TLUserDetailPhoneKVCell.m in Sources */,
 				C2D7CB451F72470400648CED /* TLGroup+ChatModel.m in Sources */,
+				F56876122526D95200CB7554 /* CharsetHelper.m in Sources */,
 				C2EE325D204F938700467298 /* TLScanningViewController.m in Sources */,
 				C2EE3222204F8C1300467298 /* TLSettingItem.m in Sources */,
 				C292D3281F7A4B75007EB0A6 /* TLMomentHeaderCell.m in Sources */,
@@ -3447,7 +3735,9 @@
 				C2EE334320500E2A00467298 /* TLChatFileCell.m in Sources */,
 				C284AEA21FF24DAE00075E59 /* TLShortcutMethod.m in Sources */,
 				C249934A1FFB84A100F69B16 /* TLExpressionMoreSearchCell.m in Sources */,
+				F568761A2526D95200CB7554 /* UDPUtils.m in Sources */,
 				C2D7C90C1F7246CC00648CED /* NSDate+TLChat.m in Sources */,
+				F56876092526D95200CB7554 /* LocalDataSender.m in Sources */,
 				C2D7CB3D1F72470400648CED /* TLEmojiKeyboard+DisplayView.m in Sources */,
 				C23EE4701F7392540069885F /* TLExpressionDetailViewController.m in Sources */,
 				C2A92CA71F7A24DD0038CFAE /* TLDiscoverViewController.m in Sources */,
@@ -3458,6 +3748,7 @@
 				C284AEAE1FF261D800075E59 /* TLChatViewController+Conversation.m in Sources */,
 				C2A92CB41F7A2B040038CFAE /* TLMineViewController.m in Sources */,
 				C2D7CC661F72844F00648CED /* TLDBBaseStore.m in Sources */,
+				F568761C2526D95200CB7554 /* ClientCoreSDK.m in Sources */,
 				C29C6B70200505390058ED75 /* TLMobileContactHelper.m in Sources */,
 				C20B8339204EA3300086F5E7 /* TLWalletViewController.m in Sources */,
 				C292D3271F7A4B73007EB0A6 /* TLMomentBaseCell.m in Sources */,
@@ -3474,6 +3765,7 @@
 				C278BC8C20501C800063E728 /* UIViewController+PopGesture.m in Sources */,
 				C2D7CB421F72470400648CED /* TLMoreKeyboard+CollectionView.m in Sources */,
 				C2D7CB471F72470400648CED /* TLChatViewController+Delegate.m in Sources */,
+				F568761E2526D95200CB7554 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				C2218BFF20501F88005A2947 /* TLLoginViewController.m in Sources */,
 				C2D7CB321F72470400648CED /* TLEmojiFaceItemCell.m in Sources */,
 				C2EE334020500E2A00467298 /* TLGroupQRCodeViewController.m in Sources */,
@@ -3491,6 +3783,7 @@
 				C2EE334720500E2A00467298 /* TLUserGroupItemCell.m in Sources */,
 				C29C6B1E2004B8010058ED75 /* TLAddContactsViewController.m in Sources */,
 				C2D7CB341F72470400648CED /* TLEmojiImageTitleItemCell.m in Sources */,
+				F568760F2526D95200CB7554 /* QoS4SendDaemon.m in Sources */,
 				C292D32E1F7A4B8F007EB0A6 /* TLMomentExtensionCommentCell.m in Sources */,
 				C2EE32C3204FC1E100467298 /* TLSettingItemDeleteButtonCell.m in Sources */,
 				C2EE327C204F93DF00467298 /* TLShakeButton.m in Sources */,
@@ -3513,19 +3806,21 @@
 				C2D7CB281F72470400648CED /* TLExpressionMessageCell.m in Sources */,
 				C2EE33292050082C00467298 /* TLNewMessageSettingViewController.m in Sources */,
 				C2218C2720502098005A2947 /* TLConversationNoNetCell.m in Sources */,
+				F56876142526D95200CB7554 /* PKeepAliveResponse.m in Sources */,
 				C24993271FFB645100F69B16 /* TLExpressionBannerCell.m in Sources */,
+				F56876192526D95200CB7554 /* NSMutableDictionary+Ext.m in Sources */,
 				C2D7CB391F72470400648CED /* TLEmojiGroupControl.m in Sources */,
 				C2D7CB351F72470400648CED /* TLEmojiGroupDisplayView+CollectionView.m in Sources */,
 				C2531ABD204E3ED100D27C99 /* TLSettingViewController.m in Sources */,
 				C2531AC9204E3FBF00D27C99 /* TLMenuItemCell.m in Sources */,
 				C2EE334520500E2A00467298 /* TLChatDetailViewController.m in Sources */,
-				C2218BEF20501D79005A2947 /* TLPictureCarouselViewCell.m in Sources */,
 				C24993611FFB8C8C00F69B16 /* TLExpressionGroupModel+DetailRequest.m in Sources */,
 				C2D7CB221F72470400648CED /* TLChatBaseViewController.m in Sources */,
 				C2218C2220502098005A2947 /* TLConversationCell.m in Sources */,
 				C27A498A1FFDC59C00EA5FD5 /* TLExpressionDetailBannerCell.m in Sources */,
 				C2D7CC861F72859600648CED /* TLDBConversationStore.m in Sources */,
 				C2D7CB211F72470400648CED /* TLChatBaseViewController+Proxy.m in Sources */,
+				F56876272526D9C600CB7554 /* IMClientManager.m in Sources */,
 				C2EE3316204FFF7200467298 /* TLChatBackgroundSelectCell.m in Sources */,
 				C2218C0020501F88005A2947 /* TLRegisterViewController.m in Sources */,
 				C249DB3E2003676A00702FA4 /* TLContactsViewController.m in Sources */,
@@ -3542,6 +3837,7 @@
 				C2D7CB9E1F72470500648CED /* TLLaunchManager.m in Sources */,
 				C2D7C90E1F7246CC00648CED /* NSString+Message.m in Sources */,
 				C29C6B1C2004B8010058ED75 /* TLMobileContactsSearchResultViewController.m in Sources */,
+				F568761B2526D95200CB7554 /* ToolKits.m in Sources */,
 				C2EE325F204F938700467298 /* TLScannerButton.m in Sources */,
 				C2D7CBD51F72472700648CED /* TLWebViewController.m in Sources */,
 				C2D7CB331F72470400648CED /* TLEmojiImageItemCell.m in Sources */,
@@ -3552,6 +3848,8 @@
 				C27A498D1FFDCE4500EA5FD5 /* TLExpressionDetailSeperatorCell.m in Sources */,
 				C2D7C89B1F722E6700648CED /* TLAppConfig.m in Sources */,
 				C2D7CBDC1F72498900648CED /* TLAccountManager.m in Sources */,
+				F56876172526D95200CB7554 /* Protocal.m in Sources */,
+				F56876212526D95200CB7554 /* MBGCDAsyncUdpSocket.m in Sources */,
 				C2A92CB51F7A2B060038CFAE /* TLMineHeaderCell.m in Sources */,
 				C2D7C90D1F7246CC00648CED /* NSFileManager+TLChat.m in Sources */,
 				C20B8329204EA2BC0086F5E7 /* TLPrivacySettingViewController.m in Sources */,
@@ -3566,10 +3864,13 @@
 				C259CE911FF2290D0058FD6E /* TLDBExpressionStore.m in Sources */,
 				C29C6AA6200497030058ED75 /* TLOfficialAccountSearchResultViewController.m in Sources */,
 				C2D7CB361F72470400648CED /* TLEmojiGroupDisplayView+Gesture.m in Sources */,
+				F568760D2526D95200CB7554 /* LocalDataReciever.m in Sources */,
 				C24993351FFB663A00F69B16 /* UIScrollView+TLLoadMoreFooter.m in Sources */,
 				C2D7CB271F72470400648CED /* TLTextDisplayView.m in Sources */,
+				F568760B2526D95200CB7554 /* LocalSocketProvider.m in Sources */,
 				C2D7CC571F7281D200648CED /* TLVideoMessage.m in Sources */,
 				C29C6A8F200494DD0058ED75 /* TLUserDetailViewChatButtonCell.m in Sources */,
+				F56876102526D95200CB7554 /* PKeepAlive.m in Sources */,
 				C2EE327B204F93DF00467298 /* TLShakeViewController.m in Sources */,
 				C292D3721F7A54C3007EB0A6 /* NSString+TLNetwork.m in Sources */,
 				C2EE325E204F938700467298 /* TLScannerViewController.m in Sources */,
@@ -3582,11 +3883,13 @@
 				C292D3251F7A4B6C007EB0A6 /* TLMomentDetail.m in Sources */,
 				C2D7CC071F7267F000648CED /* TLMessageManager.m in Sources */,
 				C2D7C9131F7246CC00648CED /* UIFont+TLChat.m in Sources */,
+				F56876112526D95200CB7554 /* PLoginInfo.m in Sources */,
 				C2D7CC551F7281D200648CED /* TLMessageFrame.m in Sources */,
 				C269EC08204D0C6C007B6B11 /* TLMomentDetailViewController.m in Sources */,
 				C24993491FFB84A100F69B16 /* TLExpressionMoreViewController.m in Sources */,
 				C2EE331A204FFF7200467298 /* TLCommonSettingViewController.m in Sources */,
 				C29C6A8C200494DD0058ED75 /* TLUserDetailChatButtonCell.m in Sources */,
+				F568761D2526D95200CB7554 /* RMMapper.m in Sources */,
 				C2D7CB231F72470400648CED /* TLChatCellMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3737,7 +4040,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QPLPPHZKSV;
+				DEVELOPMENT_TEAM = 257L6729BX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/TLKitExtensions/Frameworks",
@@ -3803,7 +4106,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QPLPPHZKSV;
+				DEVELOPMENT_TEAM = 257L6729BX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/TLKitExtensions/Frameworks",
@@ -3864,6 +4167,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 257L6729BX;
 				INFOPLIST_FILE = TLChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.58ganji.TLChatTests;
@@ -3876,6 +4181,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 257L6729BX;
 				INFOPLIST_FILE = TLChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.58ganji.TLChatTests;
@@ -3887,6 +4194,7 @@
 		C2097F171C52326500163B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 257L6729BX;
 				INFOPLIST_FILE = TLChatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.58ganji.TLChatUITests;
@@ -3899,6 +4207,7 @@
 		C2097F181C52326500163B5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 257L6729BX;
 				INFOPLIST_FILE = TLChatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.58ganji.TLChatUITests;

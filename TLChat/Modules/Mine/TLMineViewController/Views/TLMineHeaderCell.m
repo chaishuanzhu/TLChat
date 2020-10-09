@@ -74,7 +74,11 @@
 
 - (void)setUser:(TLUser *)user
 {
+    if (_user) {
+        [self removeAllObserver];
+    }
     _user = user;
+    [self addAllObserver];
     if (user.avatarPath) {
         [self.avatarImageView setImage:[UIImage imageNamed:user.avatarPath]];
     }
@@ -83,6 +87,33 @@
     }
     [self.nikenameLabel setText:user.nikeName];
     [self.wechatIDLabel setText:user.username ? [NSString stringWithFormat:@"%@：%@", LOCSTR(@"微信号"), user.username] : @""];
+}
+
+- (void)addAllObserver {
+    [_user addObserver:self forKeyPath:@"avatarURL" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    [_user addObserver:self forKeyPath:@"nikeName" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    [_user addObserver:self forKeyPath:@"username" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeAllObserver {
+    [_user removeObserver:self forKeyPath:@"avatarURL"];
+    [_user removeObserver:self forKeyPath:@"nikeName"];
+    [_user removeObserver:self forKeyPath:@"username"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    TLUser *user = (TLUser *)object;
+    if ([keyPath isEqualToString:@"avatarURL"]) {
+        [self.avatarImageView tt_setImageWithURL:TLURL(user.avatarURL) placeholderImage:[UIImage imageNamed:DEFAULT_AVATAR_PATH]];
+    } else if ([keyPath isEqualToString:@"nikeName"]) {
+        [self.nikenameLabel setText:user.nikeName];
+    } else if ([keyPath isEqualToString:@"username"]) {
+        [self.wechatIDLabel setText:user.username ? [NSString stringWithFormat:@"%@：%@", LOCSTR(@"微信号"), user.username] : @""];
+    }
+}
+
+- (void)dealloc {
+    [self removeAllObserver];
 }
 
 #pragma mark - # Private Methods

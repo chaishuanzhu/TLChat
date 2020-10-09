@@ -11,7 +11,7 @@
 #import "TLChatFileHeaderView.h"
 #import "NSDate+TLChat.h"
 #import "TLMessageManager+MessageRecord.h"
-#import <MWPhotoBrowser/MWPhotoBrowser.h>
+//#import <MWPhotoBrowser/MWPhotoBrowser.h>
 #import "NSFileManager+TLChat.h"
 
 #define     HEIGHT_COLLECTIONVIEW_HEADER    28
@@ -99,11 +99,11 @@
             }
         }
         if (index >= 0) {
-            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:self.browserData];
-            [browser setDisplayNavArrows:YES];
-            [browser setCurrentPhotoIndex:index];
-            UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
-            [self presentViewController:broserNavC animated:NO completion:nil];
+//            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:self.browserData];
+//            [browser setDisplayNavArrows:YES];
+//            [browser setCurrentPhotoIndex:index];
+//            UINavigationController *broserNavC = [[UINavigationController alloc] initWithRootViewController:browser];
+//            [self presentViewController:broserNavC animated:NO completion:nil];
         }
     }
 }
@@ -165,8 +165,8 @@
                     else {
                         url = TLURL([(TLImageMessage *)message imageURL]);
                     }
-                    MWPhoto *photo = [MWPhoto photoWithURL:url];
-                    [_browserData addObject:photo];
+//                    MWPhoto *photo = [MWPhoto photoWithURL:url];
+//                    [_browserData addObject:photo];
                 }
             }
         }
@@ -188,8 +188,8 @@
                 else {
                     url = TLURL([(TLImageMessage *)message imageURL]);
                 }
-                MWPhoto *photo = [MWPhoto photoWithURL:url];
-                [_browserData addObject:photo];
+//                MWPhoto *photo = [MWPhoto photoWithURL:url];
+//                [_browserData addObject:photo];
             }
         }
     }

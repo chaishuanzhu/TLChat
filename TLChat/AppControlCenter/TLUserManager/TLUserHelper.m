@@ -25,7 +25,7 @@
 - (void)loginTestAccount
 {
     TLUser *user = [[TLUser alloc] init];
-    user.userID = @"1000";
+    user.userID = @"1001";
     user.avatarURL = @"https://img01.sogoucdn.com/net/a/04/link?appid=100520145&url=http%3A%2F%2Fcdnimg103.lizhi.fm%2Fradio_cover%2F2017%2F07%2F24%2F2614849727230184452_320x320.jpg";
     user.nikeName = @"李伯坤";
     user.username = @"li-bokun";

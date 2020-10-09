@@ -15,6 +15,8 @@
 #import "TLDiscoverViewController.h"
 #import "TLMineViewController.h"
 #import "TLAccountViewController.h"
+#import "TLSDKManager.h"
+#import "TLMessageManager.h"
 
 @interface TLLaunchManager ()
 
@@ -43,9 +45,9 @@
     if ([TLUserHelper sharedHelper].isLogin) {      // 已登录
         [self.tabBarController setViewControllers:[self p_createTabBarChildViewController]];
         [self setCurRootVC:self.tabBarController];
-        
+        [[TLMessageManager sharedInstance] loginWithID:[TLUserHelper sharedHelper].userID andToken:@"123456"];
         // 初始化用户信息
-        [self initUserData];
+//        [self initUserData];
     }
     else {  // 未登录
         TLAccountViewController *accountVC = [[TLAccountViewController alloc] init];
@@ -56,6 +58,12 @@
         }];
         [self setCurRootVC:accountVC];
     }
+}
+
+- (void)logout {
+    [[TLSDKManager sharedInstance]releaseSDK];
+    [[TLUserHelper sharedHelper] setUser:nil];
+    [self launchInWindow:_window];
 }
 
 - (void)setCurRootVC:(__kindof UIViewController *)curRootVC

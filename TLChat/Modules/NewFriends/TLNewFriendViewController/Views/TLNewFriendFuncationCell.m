@@ -7,7 +7,6 @@
 //
 
 #import "TLNewFriendFuncationCell.h"
-#import "UIView+Extensions.h"
 
 TLNewFriendFuncationModel *createNewFriendFuncationModel(NSString *icon, NSString *title)
 {

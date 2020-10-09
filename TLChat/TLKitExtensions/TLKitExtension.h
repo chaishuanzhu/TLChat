@@ -17,4 +17,6 @@
 
 #import "TLNetwork.h"           // 网络请求
 
+#import "UIImage+Compress.h"    // 图片压缩
+
 #import "UIBarButtonItem+Back.h"

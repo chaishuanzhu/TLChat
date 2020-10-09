@@ -38,14 +38,14 @@
     NSData *data = [NSData dataWithContentsOfFile:message.path];
     if (data) {
         [self.msgImageView setImage:[UIImage imageNamed:message.path]];
-        [self.msgImageView setImage:[UIImage sd_animatedGIFWithData:data]];
+        [self.msgImageView setImage:[UIImage sd_imageWithGIFData:data]];
     }
     else {      // 表情组被删掉，先从缓存目录中查找，没有的话在下载并存入缓存目录
         NSString *cachePath = [NSFileManager cacheForFile:[NSString stringWithFormat:@"%@_%@.gif", message.emoji.gid, message.emoji.eId]];
         NSData *data = [NSData dataWithContentsOfFile:cachePath];
         if (data) {
             [self.msgImageView setImage:[UIImage imageNamed:cachePath]];
-            [self.msgImageView setImage:[UIImage sd_animatedGIFWithData:data]];
+            [self.msgImageView setImage:[UIImage sd_imageWithGIFData:data]];
         }
         else {
             __weak typeof(self) weakSelf = self;
@@ -56,7 +56,7 @@
                         [data writeToFile:cachePath atomically:NO];      // 再写入到缓存中
                         if ([[imageURL description] isEqualToString:[(TLExpressionMessage *)weakSelf.message url]]) {
                             dispatch_async(dispatch_get_main_queue(), ^{
-                                [weakSelf.msgImageView setImage:[UIImage sd_animatedGIFWithData:data]];
+                                [weakSelf.msgImageView setImage:[UIImage sd_imageWithGIFData:data]];
                             });
                         }
                     });

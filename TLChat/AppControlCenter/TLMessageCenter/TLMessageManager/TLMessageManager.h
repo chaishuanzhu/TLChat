@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "ChatBaseEvent.h"
+#import "ChatMessageEvent.h"
+#import "MessageQoSEvent.h"
+#import "CompletionDefine.h"
+
 #import "TLDBMessageStore.h"
 #import "TLDBConversationStore.h"
 #import "TLMessage.h"
@@ -14,10 +20,13 @@
 #import "TLMessageManagerChatVCDelegate.h"
 #import "TLMessageManagerConvVCDelegate.h"
 
-@interface TLMessageManager : NSObject
+@interface TLMessageManager : NSObject<ChatBaseEvent, ChatMessageEvent, MessageQoSEvent>
 
-@property (nonatomic, assign) id<TLMessageManagerChatVCDelegate>messageDelegate;
-@property (nonatomic, assign) id<TLMessageManagerConvVCDelegate>conversationDelegate;
+/** 本Observer目前仅用于登陆时（因为登陆与收到服务端的登陆验证结果是异步的，所以有此观察者来完成收到验证后的处理）*/
+@property (nonatomic, copy, nullable) ObserverCompletion loginOkForLaunchObserver;
+
+@property (nonatomic, weak) id<TLMessageManagerChatVCDelegate> messageDelegate;
+@property (nonatomic, weak) id<TLMessageManagerConvVCDelegate> conversationDelegate;
 
 @property (nonatomic, strong, readonly) NSString *userID;
 
@@ -33,5 +42,6 @@
             success:(void (^)(TLMessage *))success
             failure:(void (^)(TLMessage *))failure;
 
-
+- (int)loginWithID:(NSString *)uid
+           andToken:(NSString *)token;
 @end

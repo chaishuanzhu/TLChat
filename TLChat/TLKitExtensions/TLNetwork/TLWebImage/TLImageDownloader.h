@@ -10,6 +10,8 @@
 
 @interface TLImageDownloader : NSObject
 
++ (instancetype)sharedDownloader;
+
 /// 是否按队列顺序执行回调（默认NO）
 @property (nonatomic, assign) BOOL useQueue;
 /// 是否正在下载

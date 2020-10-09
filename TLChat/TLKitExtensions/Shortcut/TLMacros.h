@@ -25,7 +25,8 @@ typedef void(^TLBlockRequestFailureWithErrorMessage)(NSString *errMsg);
 
 #pragma mark - # 服务器地址
 // 服务器
-#define     HOST_URL                    @"http://101.200.134.35:8000/"
+#define     HOST_URL                    @"http://192.168.2.100:8888/"
+//#define     HOST_URL                    @"http://101.200.134.35:8000/"
 //#define     HOST_URL                    @"http://10.252.146.27:8000/"
 
 // 表情服务器
